@@ -1,7 +1,5 @@
-class CfgPatches
-{
-	class twc_construct
-	{
+class CfgPatches {
+	class twc_construct {
 		units[]={};
 		weapons[]={};
 		requiredVersion=1.7;
@@ -13,16 +11,5 @@ class CfgPatches
 		versionAr[]={1};
 	};
 };
-class cfgFunctions
-{
-	class TWC_Construct
-	{
-		class Functions
-		{
-			tag = "twc_construct";
-			file="twc_construct\functions";
-			class build{};
-			class buildConfirm{};
-		};
-	};
-};
+
+#include "CfgFunctions.hpp"
