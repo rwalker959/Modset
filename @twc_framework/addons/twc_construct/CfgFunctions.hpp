@@ -8,12 +8,14 @@ class cfgFunctions {
 			class build {};
 			class buildConfirm {};
 			
-			// not used ??
-			//class playerInit {};
-			
+			class init {};
 			class canBuildTent {};
+			class canContinueBuildingTent {};
 			//class buildProgress {};
 			//class buildComplete {};
+			
+			class handleKilled {};
+			class handleUnconscious {};
 		};
 	};
 };

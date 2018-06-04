@@ -13,3 +13,17 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
+
+class Extended_PostInit_EventHandlers {
+	class twc_construct {
+		init = "call twc_construct_fnc_init";
+	};
+};
+
+class Extended_Killed_EventHandlers {
+	class CAManBase {
+		class twc_construct {
+			killed = "_this call twc_construct_fnc_handleKilled";
+		};
+	};
+};
