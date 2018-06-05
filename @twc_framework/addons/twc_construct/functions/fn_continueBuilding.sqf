@@ -11,6 +11,8 @@ private _callerIsEngineer = [_caller] call ace_common_fnc_isEngineer;
 private _buildingIsMedical = [(configFile >> "CfgVehicles" >> (typeof _building)), "TWC_isMedical", false] call BIS_fnc_returnConfigEntry;
 private _buildingIsEngineer = [(configFile >> "CfgVehicles" >> (typeof _building)), "TWC_isEngineer", false] call BIS_fnc_returnConfigEntry;
 
+private _buildingDisplayName = [(configFile >> "CfgVehicles" >> (typeof _building)), "displayName", "Building"] call BIS_fnc_returnConfigEntry;
+
 private _callerMod = 1; // don't divide by default
 if (_buildingIsMedical && _callerIsMedical) then { _callerMod = 8; };
 if (_buildingIsEngineer && _callerIsEngineer) then { _callerMod = 8; };
@@ -24,7 +26,7 @@ _placementData params ["_buildingBasePos", "_buildingVecDirAndUp"];
 
 private _fnc_onFinish = {
 	(_this select 0) params ["_caller", "_building", "_buildingIsMedical"];
-	
+	_caller setVariable ["buildingID", -1, true];
 	_building setVariable ["twc_build_progressing", false, true];
 	
 	private _progress = _building getVariable ["twc_build_progress", 0];
@@ -37,7 +39,7 @@ private _fnc_onFinish = {
 
 private _fnc_onFailure = {
 	(_this select 0) params ["_caller", "_building"];
-	
+	_caller setVariable ["buildingID", -1, true];
 	_building setVariable ["twc_build_progressing", false, true];
 	
 	private _progress = _building getVariable ["twc_build_progress", 0];
@@ -46,7 +48,13 @@ private _fnc_onFailure = {
 	[_caller, "", 1] call ace_common_fnc_doAnimation;
 };
 
-[(_buildTimeLeft + 0.5), [_caller, _building, _buildingIsMedical], _fnc_onFinish, _fnc_onFailure, "Erecting Building..."] call ace_common_fnc_progressBar;
+[(_buildTimeLeft + 0.5), [_caller, _building, _buildingIsMedical], _fnc_onFinish, _fnc_onFailure, "Erecting " + _buildingDisplayName + "..."] call ace_common_fnc_progressBar;
+
+private _progressLeft = (_actualProgress * 10) + 1;
+
+
+
+[_caller, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
 
 // will be for start build, put here temporarily
 // _buildingPos = (_caller modelToWorld [0, 4.5, 0]);
