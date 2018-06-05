@@ -19,34 +19,6 @@ class CfgPatches {
 	};
 };
 
-class CfgVehicles {
-	class Man;
-	class CAManBase: Man {
-		class ACE_SelfActions {
-			class ACE_Equipment {
-				class TWC_AssembleTent {
-					displayname = "Assemble Field Tent";
-					condition = "(secondaryWeapon player) == 'twc_fieldTent'";
-					statement = "[player,'AinvPknlMstpSnonWnonDr_medicUp0S',0,false] call ace_common_fnc_doAnimation;[120, [], {[player] spawn twc_weapons_fnc_assembleFieldTent;}, {}, 'Creating Forward Base...'] call ace_common_fnc_progressBar;";
-					showDisabled = 0;
-					priority = 1;
-					icon="";
-				};
-			};
-		};
-	};
-};
-
-class CfgFunctions {
-	class TWC_Weapons {
-		class Functions {
-			file="twc_weapons\functions";
-			class assembleFieldTent {};
-			class disassembleFieldTent {};
-		};
-	};
-};
-
 class CfgWeapons {
 	class Launcher;
 	class Launcher_Base_F: Launcher {
@@ -54,17 +26,25 @@ class CfgWeapons {
 	};
 
 	class twc_fieldTent: Launcher_Base_F {
-		author="jayman";
-		_generalMacro="Launch_NLAW_F";
-		scope=2;
-		displayname="Field Tent";
+		author = "jayman";
+		_generalMacro = "Launch_NLAW_F";
+		scope = 2;
+		displayname = "Field Tent";
 		model = "\UK3CB_BAF_Weapons\addons\UK3CB_BAF_Weapons_Static\uk3cb_static_tripod_bag_equipped.p3d";
 		picture = "\UK3CB_BAF_Weapons\addons\UK3CB_BAF_Weapons_Static\data\gear_L16_tripod_ca.paa";
 		UiPicture = "\A3\Weapons_F\Data\UI\icon_at_CA.paa";
-		handAnim[]={};
+		handAnim[] = {};
+
+		TWC_dirOffset = -180; // the directional offset, to make it face the player when placed
+		TWC_disOffset = 4.5; // the distance offset, how far away from player when placed
+		TWC_radius = 1.5; // the radial distance for isFlat check from centre
+		TWC_baseTime = 120; // the base time it takes to set up the building
+		TWC_isMedical = true; // it's a medical building, and the medic is better at setting it up
+		TWC_isEngineer = false; // it's not an engineering emplacement
+		TWC_maxReplace = 3; // how many times can it be torn down before being unable to?
 
 		class weaponSlotsInfo: WeaponsSlotsInfo {
-			mass=220;
+			mass = 220;
 		};
 	};
 
