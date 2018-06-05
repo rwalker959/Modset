@@ -11,8 +11,6 @@ class cfgFunctions {
 			class init {};
 			class canBuildTent {};
 			class canContinueBuildingTent {};
-			//class buildProgress {};
-			//class buildComplete {};
 			
 			class handleKilled {};
 			class handleUnconscious {};
