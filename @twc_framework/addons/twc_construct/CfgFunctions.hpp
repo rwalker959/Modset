@@ -10,7 +10,8 @@ class cfgFunctions {
 			
 			class init {};
 			class canBuildTent {};
-			class canContinueBuildingTent {};
+			class canContinueBuilding {};
+			class startBuilding {};
 			
 			class handleKilled {};
 			class handleUnconscious {};
