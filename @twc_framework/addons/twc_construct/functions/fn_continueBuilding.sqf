@@ -24,6 +24,13 @@ private _buildTimeLeft = (_buildTime - _buildTimeMod) * (1 - _actualProgress);
 private _placementData = _building getVariable ["twc_building_placeData", [[], []]];
 _placementData params ["_buildingBasePos", "_buildingVecDirAndUp"];
 
+private _buildingID = _caller getVariable ["isBuildingID", -1];
+if(_buildingID < 0) then {
+	_buildingID = "buildingID";
+	_caller setVariable ["isBuildingID", _buildingID, true];
+	buildingID = buildingID + 1;
+};
+
 private _fnc_onFinish = {
 	(_this select 0) params ["_caller", "_building", "_buildingIsMedical"];
 	_caller setVariable ["buildingID", -1, true];
@@ -50,9 +57,21 @@ private _fnc_onFailure = {
 
 [(_buildTimeLeft + 0.5), [_caller, _building, _buildingIsMedical], _fnc_onFinish, _fnc_onFailure, "Erecting " + _buildingDisplayName + "..."] call ace_common_fnc_progressBar;
 
+if (_actualProgress == 0) then {
+	[_caller, _building, _buildingID, _buildingBasePos vectorDiff [0, 0, 1.0], _buildingVecDirAndUp, _actualProgress] call twc_construct_fnc_setBuildingPlacement;
+	
+	// might want to cut grass here in future!
+};
+
 private _progressLeft = (_actualProgress * 10) + 1;
 
+for "_i" from _progressLeft to 10 do {
+	private _vectorDiffZ = 1 - (_i / 10);
+	private _delay = (_buildTime - _buildTimeMod) * ((_i / 10) - _actualProgress);
+	private _progress = _i / 10;
 
+	[twc_construct_fnc_setBuildingPlacement, [_caller, _building, _buildingID, _buildingBasePos vectorDiff [0, 0, _vectorDiffZ], _buildingVecDirAndUp, _progress], _delay] call CBA_fnc_waitAndExecute;
+};
 
 [_caller, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
 
