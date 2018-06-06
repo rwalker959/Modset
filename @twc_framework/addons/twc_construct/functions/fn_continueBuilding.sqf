@@ -74,14 +74,3 @@ for "_i" from _progressLeft to 10 do {
 };
 
 [_caller, "AinvPknlMstpSnonWnonDnon_medic4"] call ace_common_fnc_doAnimation;
-
-// will be for start build, put here temporarily
-// _buildingPos = (_caller modelToWorld [0, 4.5, 0]);
-// _buildingDirOffset = -180;
-// _isEmpty = !(_buildingPos isFlatEmpty  [1, -1, -1, 1, 0, false, _caller] isEqualTo []);
-
-// if (_isEmpty) then { 
-	// _building = createVehicle ["camp", [0, 0, -100], [], 0, "CAN_COLLIDE"];
-	// _building setDir (getDir _caller) - _buildingDirOffset;
-	// _building setPos _buildingPos;
-// };
