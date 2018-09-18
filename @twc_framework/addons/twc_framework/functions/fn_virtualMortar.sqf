@@ -22,23 +22,28 @@
 
 
 if (isServer) then {	
-	Params ["_marker",["_radius",200],["_rounds",5],["_Roundselect",""],["_delay",10],["_safeArea","nil"]];
-	_pos = [0,0,0];
-	if(typeName _marker == "STRING")then{_ps = getMarkerPos _marker};
-	if(typeName _marker == "ARRAY")then{_pos = _marker};
+	Params ["_marker",["_radius",200],["_rounds",5],["_Roundselect",""],["_delay",10],["_safeArea", "nil"]];
+	_pos = [0, 0, 0];
+	if(typeName _marker == "STRING") then {_ps = getMarkerPos _marker};
+	if(typeName _marker == "ARRAY") then {_pos = _marker};
+
 	_Roundtype = 0;
 	switch (_Roundselect) do {
 		case "HE": {_Roundtype = "ModuleOrdnanceMortar_F";};
 		case "SMOKE": {_Roundtype = "Smokeshell";};
-		case "ILLUM": {_Roundtype = "ACE_HandFlare_White";};
+		case "ILLUM": {_Roundtype = "F_40mm_White";};
 		default { _Roundtype =  "ModuleOrdnanceMortar_F";};
 	};
 
 	for "_i" from 0 to _rounds do{
 		_position =  [_pos, _radius] call CBA_fnc_randPos;
-		if(_position inArea _safeArea)exitWith{};
-		_Roundtype createVehicle _position;
-		sleep _delay;
+
+		if !(_position inArea _safeArea) then {
+			_Roundtype createVehicle _position;
+			sleep _delay;
+		} else {
+			_rounds = _rounds + 1;
+		};
 	};
 };
 

@@ -31,7 +31,7 @@ class cfgVehicles {
 		functionPriority=1;
 		isGlobal=0;
 		isTriggerActivated=0;
-		isDisposable=0;
+		isDisposable = 0;
 		class Arguments
 		{
 			class enabled
@@ -68,6 +68,11 @@ class cfgVehicles {
 					{
 						name="WW2";
 						value="ww2";
+					};
+					class mmo
+					{
+						name="MMO";
+						value="mmo";
 					};
 				};
 			};
@@ -282,6 +287,78 @@ class cfgVehicles {
 		displayName = "Hint Unit Medical Info";
 	};
 
+	class TWC_Module_CreateTask: Module_F {
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Create Task";
+		function = "twc_fnc_moduleCreateTask";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		icon = "\twc_framework\ui\complete_task_ca.paa";
+		functionPriority = 5;
+		isDisposable = 0;
+
+		class Arguments {
+			class Id {
+				displayName="Task ID";
+				description="Unique Task ID";
+				typeName="String";
+				defaultValue="";
+			};
+			class Description {
+				displayName="Description";
+				description="Task Description";
+				typeName="String";
+				defaultValue="";
+			};
+			class Title {
+				displayName="Title";
+				description="Task Title";
+				typeName="String";
+				defaultValue="";
+			};
+			class Position {
+				displayName="Position";
+				description="Position can be either marker, object, or position.";
+				typeName="String";
+				defaultValue="";
+			};
+		};
+
+		class ModuleDescription: ModuleDescription {
+			description = "Creates a new Task.";
+			sync[] = {"EmptyDetector"};
+		};
+	};
+	
+	class TWC_Module_GliderTakeOff: Module_F {
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Glider Take Off Action";
+		function = "twc_fnc_moduleGliderTakeOff";
+		scope = 2;
+		isGlobal = 2;
+		isTriggerActivated = 0;
+		icon = "\twc_framework\ui\airborne_ca.paa";
+		functionPriority = 5;
+		isDisposable = 1;
+
+		class Arguments {
+			class Capturedata {
+				displayName="Capture Data";
+				description="A variable that has the capture data.";
+				//typeName="STRING";
+				defaultValue="";
+			};
+		};
+
+		class ModuleDescription: ModuleDescription {
+			description = "Creates an action for commanders that allows them to control when the gliders take off.";
+			sync[] = {"EmptyDetector", "Plane_F"};
+		};
+	};
+
 	class TWC_Module_VirtualArtillery: Module_F {
 		author = "[TWC] Bosenator & jayman";
 		category = "twc_mission_framework";
@@ -290,6 +367,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\virtual_artillery_ca.paa";
 		functionPriority = 1;
 		class Arguments {
@@ -309,12 +387,12 @@ class cfgVehicles {
 					class Smoke
 					{
 						name="Smoke";
-						value="smoke";
+						value="SMOKE";
 					};
 					class Illum
 					{
 						name="Illum";
-						value="illum";
+						value="ILLUM";
 					};
 				};
 			};
@@ -353,6 +431,71 @@ class cfgVehicles {
 		};
 	};
 	
+	class TWC_Module_Artillery: Module_F {
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Artillery";
+		function = "twc_fnc_moduleArtillery";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\virtual_artillery_ca.paa";
+		functionPriority = 1;
+		class Arguments {
+			class Type
+			{
+				displayName="Type";
+				description="Type Of Ordinance";
+				typeName="STRING";
+				defaultValue="HE";
+				class values
+				{
+					class HE
+					{
+						name="HE";
+						value="HE";
+					};
+					class Smoke
+					{
+						name="Smoke";
+						value="SMOKE";
+					};
+					class Illum
+					{
+						name="Illum";
+						value="ILLUM";
+					};
+				};
+			};
+			class Rounds
+			{
+				displayName = "Rounds";
+				description="Number of rounds";
+				typeName="Number";
+				defaultValue=5;
+			};
+			class Dispersion
+			{
+				displayName = "Dispersion";
+				description="Dispersion diameter";
+				typeName="Number";
+				defaultValue=250;
+			};
+			class Delay
+			{
+				displayName = "Delay";
+				description="Delay between rounds";
+				typeName="Number";
+				defaultValue=10;
+			};
+		};
+		class ModuleDescription: ModuleDescription {
+			description = "Call in Virtual Artillery";
+			sync[] = {"EmptyDetector"};
+		};
+	};
+	
 	class TWC_Module_CompleteTask: Module_F {
 		author = "[TWC] Bosenator & jayman";
 		category = "twc_mission_framework";
@@ -361,6 +504,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\complete_task_ca.paa";
 		functionPriority = 1;
 		class Arguments {
@@ -411,6 +555,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\defend_ca.paa";
 		functionPriority = 1;
 		class Arguments
@@ -451,6 +596,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\air_assault_ca.paa";
 		functionPriority = 1;
 		class Arguments
@@ -523,7 +669,8 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
-		icon = "\twc_framework\ui\airborne_ca.paa"; // TODO
+		isDisposable = 0;
+		icon = "\twc_framework\ui\airborne_ca.paa";
 		functionPriority = 1;
 		class Arguments
 		{
@@ -644,6 +791,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\attack_plane_ca.paa";
 		functionPriority = 1;
 		class Arguments
@@ -682,24 +830,24 @@ class cfgVehicles {
 		displayName = "Command Message";
 		function = "twc_fnc_moduleCommandMessage";
 		scope = 2;
-		isDisposable = 1;
 		isGlobal = 0;
 		isTriggerActivated = 1;
 		icon = "\twc_framework\ui\command_message_ca.paa";
-		functionPriority = 1;
-		class Arguments
-		{
-			class Message
-			{
+		functionPriority = 5;
+		isDisposable = 0;
+
+		class Arguments {
+			class Message {
 				displayName="Message";
 				description="Text To Display";
 				typeName="String";
 				defaultValue="";
 			};
 		};
+
 		class ModuleDescription: ModuleDescription {
 			description = "Send Command A Message";
-			sync[] = {""};
+			sync[] = {"EmptyDetector"};
 		};
 	};
 	
@@ -713,6 +861,7 @@ class cfgVehicles {
 		isTriggerActivated = 0;
 		icon = "\twc_framework\ui\intel_action_ca.paa";
 		functionPriority = 1;
+		isDisposable = 0;
 		class Arguments
 		{
 			class Title
@@ -746,6 +895,7 @@ class cfgVehicles {
 		isTriggerActivated = 0;
 		icon = "\twc_framework\ui\intel_action_variable_ca.paa";
 		functionPriority = 1;
+		isDisposable = 0;
 		
 		class Arguments {
 			class Title {
@@ -786,6 +936,7 @@ class cfgVehicles {
 		isTriggerActivated = 1;
 		icon = "\twc_framework\ui\light_switch_ca.paa";
 		functionPriority = 1;
+		isDisposable = 0;
 		class Arguments
 		{
 			class Status
@@ -829,7 +980,8 @@ class cfgVehicles {
 		function = "twc_fnc_moduleDaisyCutter";
 		scope = 2;
 		isGlobal = 0;
-		isTriggerActivated = 01;
+		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\daisy_cutter_ca.paa";
 		functionPriority = 1;
 		class ModuleDescription: ModuleDescription {
@@ -846,6 +998,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 0;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\stationary_units_ca.paa";
 		functionPriority = 1;
 		class Arguments {};
@@ -863,6 +1016,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 1;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\movable_units_ca.paa";
 		functionPriority = 1;
 		class Arguments {};
@@ -880,6 +1034,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 0;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\disable_caching_ca.paa";
 		functionPriority = 1;
 		class Arguments {};
@@ -898,6 +1053,7 @@ class cfgVehicles {
 		scopeCurator = 0;
 		isGlobal = 1;
 		isTriggerActivated = 0;
+		isDisposable = 0;
 		is3DEN = 1;
 		functionPriority = 1;
 	};
@@ -910,6 +1066,7 @@ class cfgVehicles {
 		scope = 2;
 		isGlobal = 0;
 		isTriggerActivated = 0;
+		isDisposable = 0;
 		icon = "\twc_framework\ui\ignore_foward_base_ca.paa";
 		functionPriority = 1;
 		class Arguments {};

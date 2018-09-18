@@ -1,10 +1,7 @@
-class CfgFunctions
-{
-	class TWC
-	{
-		class Functions
-		{
-			file="twc_framework\functions";
+class CfgFunctions {
+	class TWC {
+		class functions {
+			file = "twc_framework\functions";
 			class AirAssault {};
 			class Airborne {};
 			class Artillery{};
@@ -38,12 +35,12 @@ class CfgFunctions
 			class grabComposition {};
 			class sendCTabMessage {};
 			class isHigherRank {};
-			
+			class GliderTakeOff {};
 			class init{};
 		};
-		class Modules
-		{
-			file="twc_framework\modules";
+		
+		class modules {
+			file = "twc_framework\modules";
 			class era{};
 			class rollShirt{};
 			class boatSafety{};
@@ -56,10 +53,11 @@ class CfgFunctions
 			class run{};
 			class safeZone{};
 			class zeus{};
-
+			class moduleCreateTask;
 			class moduleStationaryUnits{};
 			class moduleMovableUnits{};
 			class moduleVirtualArtillery{};
+			class moduleArtillery{};
 			class moduleUpdateTask{};
 			class moduleDefend{};
 			class moduleAirAssault{};
@@ -72,10 +70,11 @@ class CfgFunctions
 			class moduleDisableCaching {};
 			class moduleGrabComposition {};
 			class moduleIgnoreForwardBase {};
+			class moduleGliderTakeOff {};
 		};
-		class cache
-		{
-			file="twc_framework\cache";
+		
+		class cache {
+			file = "twc_framework\cache";
 			class aiCaching {};
 			class cacheGroup {};
 			class cacheModuleInit {};
@@ -86,17 +85,17 @@ class CfgFunctions
 			class unCacheVehicle {};
 			class vehicleCaching {};
 		};
-		class headlessClient
-		{
-			file="twc_framework\headlessClient";
+		
+		class headlessClient {
+			file = "twc_framework\headlessClient";
 			class handleSpawn {};
 			class hcModuleInit {};
 			class rebalance {};
 			class transferGroups {};
 		};
-		class curator
-		{
-			file="twc_framework\curator";
+
+		class curator {
+			file = "twc_framework\curator";
 			class healPlayer {};
 			class killPlayer {};
 			class setSpectator {};
@@ -109,6 +108,7 @@ class CfgFunctions
 			class moduleArtillerySpotter {};
 			class moduleArtilleryPieces {};
 		};
+
 		class looseAmmo {
 			file = "twc_framework\looseAmmo";
 			class addLooseAmmoEH {};

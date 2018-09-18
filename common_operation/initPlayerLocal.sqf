@@ -4,8 +4,6 @@ if (serverTime < 600) then {
 	[player] remoteExecCall ["twc_fnc_briefingLoadout", (group player)];
 };
 
-[] execVM "tasks.sqf";
-
 if (!isNil "completedTasks") then {
 	{
 		[_x select 0, _x select 1, false] call BIS_fnc_taskSetState;
@@ -15,6 +13,7 @@ if (!isNil "completedTasks") then {
 if (isMultiplayer) then {
 	[] Spawn {
 		waitUntil{!(isNil "BIS_fnc_init")};
+		enableRadio false;
 		playMusic "Theme";
 		titleCut ["", "BLACK FADED", 999];
 		
@@ -59,10 +58,11 @@ if (isMultiplayer) then {
 	};
 };
 
-player createDiarySubject ["Intel", "Intel"];
+player createDiarySubject ["Intel", "Radio Messages"];
+player createDiarySubject ["Convo", "Conversations Log"];
 
 if (!(isNil "twc_JIP_CommandMessage")) then {
 	{
-		player createDiaryRecord ["Diary", ["Intel", _x]];
+		player createDiaryRecord ["Diary", ["Radio Message", _x]];
 	} forEach twc_JIP_CommandMessage;
 };
