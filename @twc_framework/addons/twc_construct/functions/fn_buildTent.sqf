@@ -1,8 +1,8 @@
 params ["_caller", "_target"];
 
-if (!((secondaryWeapon _caller) == 'twc_fieldTent') || !((secondaryWeapon _caller) == 'twc_ww2_fieldTent')) exitWith { };
-
 _tentItemClass = secondaryWeapon _caller;
-_tentClass = getText (configFile >> "CfgWeapons" >> _tentItemClass >> "TWC_TentClass");
+_tentClass = [(configFile >> "CfgWeapons" >> _tentItemClass), "TWC_TentClass", ""] call BIS_fnc_returnConfigEntry;
+
+if (_tentClass == "") exitWith { systemChat format ["Error: Cannot find TWC_TentClass entry for: %1.", _tentItemClass]; };
 
 [_caller, _tentClass] call twc_construct_fnc_startBuilding;
