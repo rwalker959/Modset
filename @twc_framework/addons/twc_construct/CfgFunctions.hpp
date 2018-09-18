@@ -8,8 +8,10 @@ class cfgFunctions {
 			class build {};
 			class buildConfirm {};
 			
+			// new construct system
 			class init {};
 			class canBuildTent {};
+			class buildTent {};
 			class canContinueBuilding {};
 			class startBuilding {};
 			class setBuildingPlacement {};
