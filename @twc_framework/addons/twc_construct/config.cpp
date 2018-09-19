@@ -42,7 +42,7 @@ class CfgVehicles {
 					statement = "[_target, _player] call twc_construct_fnc_buildTent";
 					showDisabled = 0;
 					priority = 1;
-					icon="";
+					icon = "";
 				};
 			};
 		};

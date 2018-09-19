@@ -25,6 +25,7 @@ private _placementData = _building getVariable ["twc_building_placeData", [[], [
 _placementData params ["_buildingBasePos", "_buildingVecDirAndUp"];
 
 private _buildingID = _caller getVariable ["isBuildingID", -1];
+
 if(_buildingID < 0) then {
 	_buildingID = buildingID;
 	_caller setVariable ["isBuildingID", _buildingID, true];
