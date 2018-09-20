@@ -1,8 +1,8 @@
-params ["_caller", "_buildingClass"];
+params ["_caller", "_buildingClass", "_itemClass"];
 
-private _buildingDirOffset = [(configFile >> "CfgVehicles" >> _buildingClass, "TWC_dirOffset", 0] call BIS_fnc_returnConfigEntry;
-private _buildingDisOffset = [(configFile >> "CfgVehicles" >> _buildingClass, "TWC_disOffset", 0] call BIS_fnc_returnConfigEntry;
-private _buildingRadialCheck = [(configFile >> "CfgVehicles" >> _buildingClass, "TWC_radius", 1] call BIS_fnc_returnConfigEntry;
+private _buildingDirOffset = [(configFile >> "CfgWeapons" >> _itemClass, "TWC_dirOffset", 0] call BIS_fnc_returnConfigEntry;
+private _buildingDisOffset = [(configFile >> "CfgWeapons" >> _itemClass, "TWC_disOffset", 0] call BIS_fnc_returnConfigEntry;
+private _buildingRadialCheck = [(configFile >> "CfgWeapons" >> _itemClass, "TWC_radius", 1] call BIS_fnc_returnConfigEntry;
 
 private _buildingPos = (_caller modelToWorld [0, _buildingDisOffset, 0]);
 private _isEmpty = !(_buildingPos isFlatEmpty  [_buildingRadialCheck, -1, -1, 1, 0, false, _caller] isEqualTo []);
