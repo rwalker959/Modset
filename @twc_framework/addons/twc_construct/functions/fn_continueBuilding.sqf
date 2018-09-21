@@ -11,6 +11,7 @@ private _callerIsEngineer = [_caller] call ace_common_fnc_isEngineer;
 private _buildingIsMedical = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_isMedical", false] call BIS_fnc_returnConfigEntry;
 private _buildingIsEngineer = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_isEngineer", false] call BIS_fnc_returnConfigEntry;
 private _isReconnectPoint = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_isReconnectPoint", false] call BIS_fnc_returnConfigEntry;
+private _newItemClass = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_replacedWith", ""] call BIS_fnc_returnConfigEntry;
 
 private _buildingDisplayName = [(configFile >> "CfgVehicles" >> (typeof _building)), "displayName", "Building"] call BIS_fnc_returnConfigEntry;
 
@@ -34,7 +35,7 @@ if(_buildingID < 0) then {
 };
 
 private _fnc_onFinish = {
-	(_this select 0) params ["_caller", "_building", "_buildingIsMedical", "_buildingIsEngineer", "_isReconnectPoint"];
+	(_this select 0) params ["_caller", "_building", "_buildingIsMedical", "_buildingIsEngineer", "_isReconnectPoint", "_newItemClass"];
 	_caller setVariable ["buildingID", -1, true];
 	_building setVariable ["twc_build_progressing", false, true];
 	
@@ -45,8 +46,13 @@ private _fnc_onFinish = {
 	
 	if (_isReconnectPoint) then {
 		// reconnect position
+		_building setVariable ["twc_building_isReconnectPoint", true, true];
 		ForwardBasePos = (getPos _caller);
 		publicVariable "ForwardBasePos";
+	};
+	
+	if (_newItemClass != "") then {
+		_building setVariable ["twc_building_newItem", _newItemClass, true];
 	};
 	
 	[_caller, "", 1] call ace_common_fnc_doAnimation;
