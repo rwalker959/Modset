@@ -68,7 +68,8 @@ class CfgWeapons {
 		TWC_dirOffset = -180; // the directional offset, to make it face the player when placed
 		TWC_disOffset = 4.5; // the distance offset, how far away from player when placed
 		TWC_radius = 1; // the radial distance for isFlat check from centre
-		TWC_baseTime = 120; // the base time it takes to set up the building
+		TWC_buildTime = 120; // the base time it takes to set up the building
+		TWC_dismantleTime = 150; // the base time it takes to dismantle the building
 		TWC_isMedical = true; // it's a medical building, and the medic is better at setting it up
 		TWC_isEngineer = false; // it's not an engineering emplacement
 		TWC_isReconnectPoint = true; // it's a reconnect point

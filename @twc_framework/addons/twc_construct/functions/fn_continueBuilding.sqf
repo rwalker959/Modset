@@ -19,7 +19,8 @@ private _callerMod = 1; // don't divide by default
 if (_buildingIsMedical && _callerIsMedical) then { _callerMod = 8; };
 if (_buildingIsEngineer && _callerIsEngineer) then { _callerMod = 8; };
 
-private _buildTime = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_baseTime", 120] call BIS_fnc_returnConfigEntry;
+private _buildTime = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_buildTime", 120] call BIS_fnc_returnConfigEntry;
+private _dismantleTime = [(configFile >> "CfgWeapons" >> _itemClass), "TWC_dismantleTime", 150] call BIS_fnc_returnConfigEntry;
 private _buildTimeMod = (_buildTime / _callerMod);
 private _buildTimeLeft = (_buildTime - _buildTimeMod) * (1 - _actualProgress);
 
@@ -74,6 +75,7 @@ private _fnc_onFailure = {
 if (_actualProgress == 0) then {
 	[_caller, _building, _buildingID, _buildingBasePos vectorDiff [0, 0, 1.0], _buildingVecDirAndUp, _actualProgress] call twc_construct_fnc_setBuildingPlacement;
 	
+	_building setVariable ["TWC_dismantleTime", _dismantleTime, true];
 	// might want to cut grass here in future!
 };
 
