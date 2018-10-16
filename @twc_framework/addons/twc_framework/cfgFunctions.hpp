@@ -37,6 +37,7 @@ class CfgFunctions {
 			class sendCTabMessage {};
 			class isHigherRank {};
 			class GliderTakeOff {};
+			class confiscateBadItems {};
 			class init{};
 		};
 		
@@ -109,14 +110,6 @@ class CfgFunctions {
 			file = "twc_framework\artillery";
 			class moduleArtillerySpotter {};
 			class moduleArtilleryPieces {};
-		};
-
-		class looseAmmo {
-			file = "twc_framework\looseAmmo";
-			class addLooseAmmoEH {};
-			class looseTo303 {};
-			class enfieldToBren {};
-			class brenToEnfield {};
 		};
 	};
 };

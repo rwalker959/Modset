@@ -11,7 +11,7 @@
 		uniformClass="CUP_U_B_CDF_FST_1";
 		twc_radioType = "ACRE_PRC148";
 		backpack="pol_backpack_rif";
-		twc_radioChannel = 4;
+		twc_radioChannel = 3;
 		linkedItems[]=
 		{
 			"CUP_V_B_RRV_Scout",
@@ -281,13 +281,13 @@
 		{
 			"Throw",
 			"Put",
-			"rhs_weap_pkp"
+			"rhs_weap_pkm"
 		};
 		respawnweapons[]=
 		{
 			"Throw",
 			"Put",
-			"rhs_weap_pkp"
+			"rhs_weap_pkm"
 		};
 		magazines[]=
 		{

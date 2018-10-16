@@ -60,6 +60,30 @@ class CfgAmmo {
 		soundHit3[] = {};
 		soundHit4[] = {};
 	};
+	
+	class Chemlight_base;
+	class ACE_G_Chemlight_IR: Chemlight_base {
+		timeToLive = 150000;
+	};
+	class Chemlight_Blue: Chemlight_base {
+		timeToLive = 150000;
+	};
+	class Chemlight_Red: Chemlight_base {
+		timeToLive = 150000;
+	};
+	class Chemlight_Green: Chemlight_base {
+		timeToLive = 150000;
+	};
+	class Chemlight_Yellow: Chemlight_base {
+		timeToLive = 150000;
+	};
+	
+	class B_338_Ball;
+	class ACE_338_Ball_API526: B_338_Ball
+	{
+		caliber = 6;
+		penetrationDirDistribution = 0.05;
+	};
 };
 
 class mode_fullauto;
@@ -90,6 +114,62 @@ class CfgWeapons {
 
 		magazines[] = {"CUP_PG7V_M", "CUP_PG7VM_M", "CUP_PG7VL_M", "CUP_PG7VR_M", "CUP_OG7_M", "CUP_TBG7V_M", "twc_og7_c_m"};
 		};
+		
+		
+	class Rifle_Short_Base_F;
+	class SMG_02_base_F: Rifle_Short_Base_F
+	{
+		class FullAuto;
+	};
+	class SP_smg_sterling: SMG_02_base_F
+	{
+		class FullAuto: FullAuto
+		{
+			Burst = 1;
+		};
+	};
+	
+		
+	class UK3CB_BAF_L115A3;
+	class twc_l115a3_wd: UK3CB_BAF_L115A3
+	{
+		scope = 1;
+		author = "jayman";
+		magazines[] = {"ACE_10Rnd_338_300gr_HPBT_Mag", "ACE_10Rnd_338_API526_Mag"};
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "asdg_OpticRail_UK3CB_BAF_L115";
+				item = "RKSL_optic_PMII_525";
+			};
+			class LinkedItemsMuzzle
+			{
+				slot = "asdg_MuzzleSlot_UK3CB_BAF_L115";
+				item= "UK3CB_BAF_Silencer_L115A3";
+			};
+		};
+	};
+	class UK3CB_BAF_L115A3_Ghillie;
+	class twc_l115a3_gh: UK3CB_BAF_L115A3_Ghillie
+	{
+		scope = 1;
+		author = "jayman";
+		magazines[] = {"ACE_10Rnd_338_300gr_HPBT_Mag", "ACE_10Rnd_338_API526_Mag"};
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "asdg_OpticRail_UK3CB_BAF_L115";
+				item = "RKSL_optic_PMII_525";
+			};
+			class LinkedItemsMuzzle
+			{
+				slot = "asdg_muzzleslot_UK3CB_BAF_L115";
+				item= "UK3CB_BAF_Silencer_L115A3";
+			};
+		};
+	};
 		
 	
 	class Rifle_Base_F;
@@ -146,6 +226,7 @@ class CfgWeapons {
 	{
 		class eventhandlers;
 		class mode_fullauto;
+		class manual;
 	};
 	class LMG_RCWS: MGun {
 		class EventHandlers: EventHandlers {
@@ -155,25 +236,22 @@ class CfgWeapons {
 	class GMG_F: MGun {
 		reloadtime = 0.22;
 		class EventHandlers: EventHandlers {
-			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 8) - 4, (velocity _bullet select 1) + (random 8) - 4,  (velocity _bullet select 2) + (random 24) - 12];};twc_gpmglastfired = time;";
+			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 10) - 5, (velocity _bullet select 1) + (random 10) - 5,  (velocity _bullet select 2) + (random 20) - 10];} else {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 8) - 4, (velocity _bullet select 1) + (random 8) - 4,  (velocity _bullet select 2) + (random 6) - 3];};twc_gpmglastfired = time;";
 		};
 	};
-	
-	class CannonCore;
+	class Default;
+	class CannonCore: Default
+	{
+		class eventhandlers;
+	};
 	class autocannon_Base_F: CannonCore
 	{
 		class eventhandlers;
 		class HE;
 	};
 	class autocannon_30mm_CTWS: autocannon_Base_F {
-		class EventHandlers: EventHandlers {
-			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 14) - 7, (velocity _bullet select 1) + (random 14) - 7, 	(velocity _bullet select 2) + (random 10) - 5];};twc_gpmglastfired = time;";
-		};
 	};
 	class L21A1_RARDEN: autocannon_Base_F {
-		class EventHandlers: EventHandlers {
-			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 14) - 7, (velocity _bullet select 1) + (random 14) - 7, 	(velocity _bullet select 2) + (random 10) - 5];};twc_gpmglastfired = time;";
-		};
 		magazines[] = {"3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_HE"};
 		magazineReloadTime = 1;
 		ReloadTime = 0.3;
@@ -193,15 +271,49 @@ class CfgWeapons {
 		muzzles[] = {"HE"};
 		ReloadTime = 0.3;
 		autoReload = 0;
-		class EventHandlers: EventHandlers {
-			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 14) - 7, (velocity _bullet select 1) + (random 14) - 7, 	(velocity _bullet select 2) + (random 10) - 5];};twc_gpmglastfired = time;";
-		};
 		class HE: HE
 		{
 			magazines[] = {"3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_HE"};
 			magazineReloadTime = 1;
 			ReloadTime = 0.3;
 			autoReload = 0;
+		};
+	};
+	
+	
+	
+	class gatling_30mm_base: CannonCore
+	{
+		class EventHandlers;
+		class Mode_FullAuto;
+		class manual;
+	};
+	
+	class UK3CB_gatling_30mm_base: gatling_30mm_base
+	{
+		modes[] = {"Burst50","close","short","medium","far"};
+		class Burst10;
+		class EventHandlers: EventHandlers {
+			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 14) - 7, (velocity _bullet select 1) + (random 14) - 7, 	(velocity _bullet select 2) + (random 10) - 5];};twc_gpmglastfired = time;";
+		};
+	};
+	
+	class UK3CB_BAF_CannonM230: UK3CB_gatling_30mm_base
+	{
+		class Burst20:Burst10
+		{
+			dispersion=0.012;
+		};
+	};
+	
+	class CUP_Vacannon_M230_veh: CannonCore
+	{
+		class manual: CannonCore
+		{
+			dispersion=0.012;
+		};
+		class EventHandlers: EventHandlers {
+			fired = "if (isnil 'twc_gpmglastfired') then {twc_gpmglastfired = 0}; if (time > twc_gpmglastfired + 0.6) then {_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 14) - 7, (velocity _bullet select 1) + (random 14) - 7, 	(velocity _bullet select 2) + (random 10) - 5];};twc_gpmglastfired = time;";
 		};
 	};
 	
@@ -335,22 +447,6 @@ class cfgRecoils
 };
 
 class CfgVehicles {
-	class Plane;
-	class CUP_AV8B_Base : Plane {
-		class AcreRacks {
-	   		class Rack_1 {
-		       		displayName = "Radio"; // Name is displayed in the interaction menu.
-				shortName = "Radio";
-				componentName = "ACRE_VRC103";
-				allowedPositions[] = {"inside", "external"}; // Who has access. "inside" - anyone inside, "external" - provides access upto 10m away, "driver", "gunner", "copilot", "commander"
-				disabledPositions[] = {};
-				defaultComponents[] = {};
-				mountedRadio = "ACRE_PRC117F"; // Predefined mounted radio
-				isRadioRemovable = 0;
-			};
-       		};
-			
-	};	
 	
 	class Tank;
 	class Tank_F: Tank
@@ -367,7 +463,7 @@ class CfgVehicles {
 		{
 			class MainTurret : MainTurret
 			{
-				magazines[] = {"3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","CUP_1200Rnd_TE4_Red_Tracer_762x51_M240_M","CUP_1200Rnd_TE4_Red_Tracer_762x51_M240_M"};
+				magazines[] = {"3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_APDS","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","3Rnd_30mm_L21A1_HE","CUP_1200Rnd_TE4_Red_Tracer_762x51_M240_M","CUP_1200Rnd_TE4_Red_Tracer_762x51_M240_M"};
 			};
 		};
 	};
@@ -382,7 +478,18 @@ class CfgVehicles {
 			};
 		};
 	};
-
+	class Helicopter_Base_H;
+	class CUP_CH47F_base: Helicopter_Base_H
+	{
+		backRotorForceCoef = 0.9;
+		cyclicForwardForceCoef = 1.5;
+		cyclicAsideForceCoef = 1.3;
+		liftForceCoef = 0.9;
+		bodyFrictionCoef = 1.4;
+		armorStructural = 20;
+	};
+		
+		
 //handling modifications
 	class Car;
 	class Car_F: Car{
@@ -403,7 +510,7 @@ class CfgVehicles {
 		class Wheels:Wheels {
 			class LF:LF {
 				springDamperRate = 22000;
-				springStrength = 40000;
+				springStrength = 80000;
 				maxCompression = 0.3;
 				maxBrakeTorque = 10000;
 				maxHandBrakeTorque = 11000;
@@ -588,7 +695,7 @@ class CfgVehicles {
 				maxCompression = 0.4;
 				//MaxDroop = 0.2;
 				sprungMass = 4250;
-				springStrength = 25000;
+				springStrength = 75000;
 				springDamperRate = 8000;
 				longitudinalStiffnessPerUnitGravity = 10000;
 				latStiffX = 25;
@@ -679,5 +786,11 @@ class CfgVehicles {
 		};
 	};
 	
+	#include "acre_apcs.hpp"
+	#include "acre_boats.hpp"
+	#include "acre_cars.hpp"
+	#include "acre_helicopters.hpp"
+	#include "acre_planes.hpp"
+	#include "acre_tanks.hpp"
 };
 

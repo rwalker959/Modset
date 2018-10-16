@@ -478,21 +478,21 @@
 		{
 			"Throw",
 			"Put",
-			"UK3CB_BAF_L9A1"
+			"UK3CB_BAF_L85A1_SUSAT3D"
 		};
 		respawnweapons[]=
 		{
 			"Throw",
 			"Put",
-			"UK3CB_BAF_L9A1"
+			"UK3CB_BAF_L85A1_SUSAT3D"
 		};
 		magazines[]=
 		{
 			"SmokeShell",
-			"UK3CB_BAF_9_13Rnd",
-			"UK3CB_BAF_9_13Rnd",
-			"UK3CB_BAF_9_13Rnd",
-			"UK3CB_BAF_9_13Rnd",
+			"UK3CB_BAF_556_30Rnd",
+			"UK3CB_BAF_556_30Rnd",
+			"UK3CB_BAF_556_30Rnd",
+			"UK3CB_BAF_556_30Rnd",
 			"SmokeShell",
 			"SmokeShell",
 			"SmokeShell",
@@ -501,10 +501,10 @@
 		Respawnmagazines[]=
 		{
 			"SmokeShell",
-			"UK3CB_BAF_9_13Rnd",
-			"UK3CB_BAF_9_13Rnd",
-			"UK3CB_BAF_9_13Rnd",
-			"UK3CB_BAF_9_13Rnd",
+			"UK3CB_BAF_556_30Rnd",
+			"UK3CB_BAF_556_30Rnd",
+			"UK3CB_BAF_556_30Rnd",
+			"UK3CB_BAF_556_30Rnd",
 			"SmokeShell",
 			"SmokeShell",
 			"SmokeShell",
@@ -828,6 +828,7 @@
 		displayName="Vehicle Commander";
 		uniformClass="UK3CB_BAF_U_CombatUniform_DPMT";
 		backpack="B_AssaultPack_blk";
+		scope=2;
 		linkedItems[]=
 		{
 			"UK3CB_BAF_V_Pilot_DPMT",
