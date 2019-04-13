@@ -1,4 +1,13 @@
 class ACE_Medical_Advanced {
+	class Injuries {
+		class fractures {
+			class Femur {
+				pain = 0.3;
+				causes[] = {"VehicleCrash", "Backblast", "Explosive", "Shell", "Grenade"};
+			};
+		};
+	};
+	
 	class Treatment {
 		class Medication {
 			class Morphine {
