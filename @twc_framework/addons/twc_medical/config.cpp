@@ -13,7 +13,12 @@ class CfgPatches {
 		authorUrl = "http://thewreckingcrew.eu";
 
 		units[] = {
-			"TWC_Module_Medical"
+			"TWC_Module_Medical",
+			"TWC_Curator_fullHealUnit",
+			"TWC_Curator_killUnit",
+			"TWC_Curator_resuscitateUnit",
+			"TWC_Curator_inspectUnit",
+			"TWC_Curator_logUnit"
 		};
 
 		weapons[] = {
@@ -36,7 +41,12 @@ class CfgPatches {
 			"TWC_Item_Medical_SutureKit_17",
 			"TWC_Item_Medical_SutureKit_18",
 			"TWC_Item_Medical_SutureKit_19",
-			"TWC_Item_Medical_SutureKit_20"
+			"TWC_Item_Medical_SutureKit_20",
+			"TWC_Item_Medical_SutureKit_21",
+			"TWC_Item_Medical_SutureKit_22",
+			"TWC_Item_Medical_SutureKit_23",
+			"TWC_Item_Medical_SutureKit_24",
+			"TWC_Item_Medical_SutureKit_25"
 		};
 	};
 };
@@ -44,8 +54,15 @@ class CfgPatches {
 class Extended_InitPost_EventHandlers {
 	class CAManBase {
 		class twc_medicalInitPos_eh {
-			clientInit = "[twc_medical_fnc_extendedVitalLoop, [(_this select 0)], 10] call CBA_fnc_waitAndExecute;";
+			clientInit = "if (local (_this select 0)) then { [twc_medical_fnc_extendedVitalLoop, [(_this select 0)], 10] call CBA_fnc_waitAndExecute; };";
 		};
+	};
+};
+
+class Extended_PostInit_EventHandlers {
+	class TWC_Medical {
+		clientInit = "[] call twc_medical_fnc_init;";
+		serverInit = "[] call twc_medical_fnc_serverInit;";
 	};
 };
 

@@ -18,9 +18,609 @@
 	class UK3CB_BAF_B_Carryall_OLI;
 	class CUP_B_ACRScout_m95;
 	class UK3CB_BAF_B_Kitbag_OLI;
+	class CUP_B_Kombat_Radio_Olive;
+	class CUP_B_GER_Medic_Tropentarn;
+	class CUP_B_GER_Medic_FLecktarn;
+	class UK3CB_BAF_B_Bergen_MTP_Medic_H_B;
+	class UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A;
+	class UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A;
+	class UK3CB_BAF_B_Bergen_MTP_SL_H_A;
 	
 	
-	class pol_backpack_rif: CUP_B_ACRScout_m95
+	
+	class ger_backpack_medic_trp: CUP_B_GER_Medic_Tropentarn
+	{
+		scope = 1;
+		class TransportItems
+		{
+            class _xx_Bandage
+			{
+				name = "ACE_fieldDressing";
+				count = 12;
+			};
+			class _xx_Morphine
+			{
+				name = "ACE_morphine";
+				count = 10;
+			};
+			class _xx_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 15;
+			};
+			class _xxACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 6;
+			};
+			class _xxACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 10;
+			};
+			class _xxACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 15;
+			};
+			class _xxACE_personalAidKit
+			{
+				name = "ACE_personalAidKit";
+				count = 1;
+			};
+			class _xxACE_salineIV_500
+			{
+				name = "ACE_salineIV_500";
+				count = 6;
+			};
+			class _xxACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 4;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 4;
+			};
+		};
+	};
+	
+	class TWC_Backpack_UKSF_Medic_H: UK3CB_BAF_B_Bergen_MTP_Medic_H_B
+	{
+		scope = 1;
+		class TransportItems
+		{
+            class _xx_Bandage
+			{
+				name = "ACE_fieldDressing";
+				count = 12;
+			};
+			class _xx_Morphine
+			{
+				name = "ACE_morphine";
+				count = 10;
+			};
+			class _xx_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 15;
+			};
+			class _xxACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 6;
+			};
+			class _xxACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 10;
+			};
+			class _xxACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 15;
+			};
+			class _xxACE_personalAidKit
+			{
+				name = "ACE_personalAidKit";
+				count = 1;
+			};
+			class _xxACE_salineIV_500
+			{
+				name = "ACE_salineIV_500";
+				count = 6;
+			};
+			class _xxACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 4;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 4;
+			};
+		};
+	};
+
+	
+	class TWC_Backpack_UKSF_SL_H: UK3CB_BAF_B_Bergen_MTP_SL_H_A
+	{
+		class TransportItems
+		{
+			class _xx_cabletie
+			{
+				name = "ACE_CableTie";
+				count = 10;
+			};
+			class _xx_defusal
+			{
+				name = "ACE_DefusalKit";
+				count = 1;
+			};
+			class _xx_chemblue
+			{
+				name = "Chemlight_blue";
+				count = 2;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_Emag";
+				count = 10;
+			};
+			class _xx_stanag_Red
+			{
+				magazine = "CUP_30Rnd_556x45_Emag_Tracer_Red";
+				count = 5;
+			};
+		};
+	};
+	
+	class TWC_Backpack_UKSF_Rifleman: UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A
+	{
+		class TransportItems
+		{
+			class _xx_cabletie
+			{
+				name = "ACE_CableTie";
+				count = 10;
+			};
+			class _xx_defusal
+			{
+				name = "ACE_DefusalKit";
+				count = 1;
+			};
+			class _xx_chemblue
+			{
+				name = "Chemlight_blue";
+				count = 2;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_Emag";
+				count = 10;
+			};
+			class _xx_stanag_Red
+			{
+				magazine = "CUP_30Rnd_556x45_Emag_Tracer_Red";
+				count = 5;
+			};
+		};
+	};
+
+	
+	class TWC_Backpack_UKSF_Marksman: UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A
+	{
+		class TransportItems
+		{
+			class _xx_cabletie
+			{
+				name = "ACE_CableTie";
+				count = 10;
+			};
+			class _xx_defusal
+			{
+				name = "ACE_DefusalKit";
+				count = 1;
+			};
+			class _xx_chemblue
+			{
+				name = "Chemlight_blue";
+				count = 2;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_stanag
+			{
+				magazine = "UK3CB_BAF_762_L42A1_20Rnd";
+				count = 10;
+			};
+			class _xx_stanag_Red
+			{
+				magazine = "UK3CB_BAF_762_L42A1_20Rnd_T";
+				count = 5;
+			};
+		};
+	};
+
+	
+	class TWC_Backpack_UKSF_2IC: UK3CB_BAF_B_Carryall_OLI
+	{
+		class TransportItems
+		{
+			class _xx_cabletie
+			{
+				name = "ACE_CableTie";
+				count = 10;
+			};
+			class _xx_defusal
+			{
+				name = "ACE_DefusalKit";
+				count = 1;
+			};
+			class _xx_chemblue
+			{
+				name = "Chemlight_blue";
+				count = 5;
+			};
+			class _xx_chemgreen
+			{
+				name = "Chemlight_green";
+				count = 5;
+			};
+			class _xx_irstrobe
+			{
+				name = "ACE_IR_Strobe_Item";
+				count = 2;
+			};
+			class _xx_shovel
+			{
+				name = "ACE_EntrenchingTool";
+				count = 1;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_762
+			{
+				magazine = "UK3CB_BAF_762_L42A1_20Rnd_T";
+				count = 6;
+			};
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_Emag";
+				count = 12;
+			};
+			class _xx_stanag_Red
+			{
+				magazine = "CUP_30Rnd_556x45_Emag_Tracer_Red";
+				count = 5;
+			};
+			class _xx_Smoke_Green
+			{
+				magazine = "SmokeShellGreen";
+				count = 3;
+			};
+		};
+		class TransportWeapons
+		{
+			class _xx_vector
+			{
+				weapon = "ACE_Vector";
+				count = 1;
+			};
+		};
+	};
+
+	
+	class TWC_Backpack_UKSF_2IC_H: UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A
+	{
+		class TransportItems
+		{
+			class _xx_cabletie
+			{
+				name = "ACE_CableTie";
+				count = 10;
+			};
+			class _xx_defusal
+			{
+				name = "ACE_DefusalKit";
+				count = 1;
+			};
+			class _xx_chemblue
+			{
+				name = "Chemlight_blue";
+				count = 5;
+			};
+			class _xx_chemgreen
+			{
+				name = "Chemlight_green";
+				count = 5;
+			};
+			class _xx_irstrobe
+			{
+				name = "ACE_IR_Strobe_Item";
+				count = 2;
+			};
+			class _xx_shovel
+			{
+				name = "ACE_EntrenchingTool";
+				count = 1;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_762
+			{
+				magazine = "UK3CB_BAF_762_L42A1_20Rnd_T";
+				count = 6;
+			};
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_Emag";
+				count = 12;
+			};
+			class _xx_stanag_Red
+			{
+				magazine = "CUP_30Rnd_556x45_Emag_Tracer_Red";
+				count = 5;
+			};
+			class _xx_Smoke_Green
+			{
+				magazine = "SmokeShellGreen";
+				count = 4;
+			};
+		};
+	};
+	
+	
+	class ger_backpack_medic_flk: CUP_B_GER_Medic_FLecktarn
+	{
+		scope = 1;
+		class TransportItems
+		{
+            class _xx_Bandage
+			{
+				name = "ACE_fieldDressing";
+				count = 12;
+			};
+			class _xx_Morphine
+			{
+				name = "ACE_morphine";
+				count = 10;
+			};
+			class _xx_ACE_elasticBandage
+			{
+				name = "ACE_elasticBandage";
+				count = 15;
+			};
+			class _xxACE_quikclot
+			{
+				name = "ACE_quikclot";
+				count = 6;
+			};
+			class _xxACE_epinephrine
+			{
+				name = "ACE_epinephrine";
+				count = 10;
+			};
+			class _xxACE_packingBandage
+			{
+				name = "ACE_packingBandage";
+				count = 15;
+			};
+			class _xxACE_personalAidKit
+			{
+				name = "ACE_personalAidKit";
+				count = 1;
+			};
+			class _xxACE_salineIV_500
+			{
+				name = "ACE_salineIV_500";
+				count = 6;
+			};
+			class _xxACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 4;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 4;
+			};
+		};
+	};
+
+	
+		class ger_backpack_leader: CUP_B_Kombat_Radio_Olive
+	{
+		scope = 1;
+		
+		class TransportItems
+		{
+			class _xx_PRC_117F
+			{
+				name = "ACRE_PRC117F";
+				count = 1;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 2;
+			};
+			class _xx_Smoke_Red
+			{
+				magazine = "SmokeShellRed";
+				count = 3;
+			};
+			class _xx_Smoke_Green
+			{
+				magazine = "SmokeShellGreen";
+				count = 3;
+			};
+			class _xx_Smoke_Blue
+			{
+				magazine = "SmokeShellBlue";
+				count = 3;
+			};
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 10;
+			};
+		};
+		
+	};
+
+	class UK3CB_BAF_B_Bergen_TAN_SL_A;
+	class ger_backpack_leader_d: UK3CB_BAF_B_Bergen_TAN_SL_A
+	{
+		scope = 1;
+		
+		class TransportItems
+		{
+			class _xx_PRC_117F
+			{
+				name = "ACRE_PRC117F";
+				count = 1;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 2;
+			};
+			class _xx_Smoke_Red
+			{
+				magazine = "SmokeShellRed";
+				count = 3;
+			};
+			class _xx_Smoke_Green
+			{
+				magazine = "SmokeShellGreen";
+				count = 3;
+			};
+			class _xx_Smoke_Blue
+			{
+				magazine = "SmokeShellBlue";
+				count = 3;
+			};
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 10;
+			};
+		};
+		
+	};
+	
+	class ger_backpack_2ic: UK3CB_BAF_B_Carryall_OLI
+	{
+		scope = 1;
+		
+
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 2;
+			};
+			class _xx_Smoke_Red
+			{
+				magazine = "SmokeShellRed";
+				count = 3;
+			};
+			class _xx_Smoke_Green
+			{
+				magazine = "SmokeShellGreen";
+				count = 3;
+			};
+			class _xx_Smoke_Blue
+			{
+				magazine = "SmokeShellBlue";
+				count = 3;
+			};
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 15;
+			};
+			class _xx_40mm
+			{
+				magazine = "1Rnd_HE_Grenade_shell";
+				count = 10;
+			};
+		};
+		
+	};
+	class UK3CB_BAF_B_Carryall_TAN;
+	class ger_backpack_2ic_d: UK3CB_BAF_B_Carryall_TAN
+	{
+		scope = 1;
+		
+
+		class TransportMagazines
+		{
+			class _xx_Smoke
+			{
+				magazine = "SmokeShell";
+				count = 2;
+			};
+			class _xx_Smoke_Red
+			{
+				magazine = "SmokeShellRed";
+				count = 3;
+			};
+			class _xx_Smoke_Green
+			{
+				magazine = "SmokeShellGreen";
+				count = 3;
+			};
+			class _xx_Smoke_Blue
+			{
+				magazine = "SmokeShellBlue";
+				count = 3;
+			};
+			class _xx_stanag
+			{
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 15;
+			};
+			class _xx_40mm
+			{
+				magazine = "1Rnd_HE_Grenade_shell";
+				count = 10;
+			};
+		};
+		
+	};
+
+	class CUP_B_GER_Pack_Tropentarn;
+	class ger_backpack_rif_trp: CUP_B_GER_Pack_Tropentarn
 	{
 		scope = 1;
 		
@@ -28,7 +628,126 @@
 		{
 			class _xx_mag
 			{
-				magazine = "rhsgref_30rnd_556x45_m21";
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 8;
+			};
+
+		};
+		class TransportItems
+		{
+			class _xx_shovel
+			{
+				name = "ACE_EntrenchingTool";
+				count = 1;
+			};
+		};
+		
+	};
+	class ger_backpack_at_trp: CUP_B_GER_Pack_Tropentarn
+	{
+		scope = 1;
+		
+		class TransportMagazines
+		{
+			class _xx_mag
+			{
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 5;
+			};
+			class _xx_rocket
+			{
+				magazine = "rhs_mag_maaws_HEDP";
+				count = 2;
+			};
+
+		};
+		
+	};
+
+	class CUP_B_GER_Pack_Flecktarn;
+	class ger_backpack_rif_flk: CUP_B_GER_Pack_Flecktarn
+	{
+		scope = 1;
+		
+		class TransportMagazines
+		{
+			class _xx_mag
+			{
+				magazine = "CUP_30Rnd_556x45_G36";
+				count = 5;
+			};
+			class _xx_rocket
+			{
+				magazine = "rhs_mag_maaws_HEDP";
+				count = 2;
+			};
+
+		};
+		
+	};
+	class ger_backpack_at_flk: CUP_B_GER_Pack_Flecktarn
+	{
+		scope = 1;
+		
+		class TransportMagazines
+		{
+			class _xx_mag
+			{
+				magazine = "rhs_mag_maaws_HEDP";
+				count = 2;
+			};
+
+		};
+		
+	};
+	
+	
+	class ger_backpack_mg: UK3CB_BAF_B_Kitbag_OLI
+	{
+		scope = 1;
+		
+		class TransportMagazines
+		{
+			class _xx_pkm
+			{
+				magazine = "rhs_200rnd_556x45_T_SAW";
+				count = 7;
+			};
+			
+		};
+		
+	};
+	
+	class twc_genbackPack_tan;
+	class ger_backpack_mg_d: twc_genbackPack_tan
+	{
+		scope = 1;
+		
+		class TransportMagazines
+		{
+			class _xx_pkm
+			{
+				magazine = "rhs_200rnd_556x45_T_SAW";
+				count = 7;
+			};
+			
+		};
+		
+	};
+	
+	
+	
+	class pol_backpack_rif: CUP_B_ACRScout_m95
+	{
+		scope = 1;
+	hiddenselectionstextures[] = {"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_small_oli_co.paa"};
+	hiddenSelectionsMaterials[] = {"\A3\data_f\default.rvmat"};
+		
+		class TransportMagazines
+		{
+			class _xx_mag
+			{
+				magazine = "twc_rhsgref_30rnd_556x45_m21";
 				count = 5;
 			};
 
@@ -37,10 +756,10 @@
 	};
 	
 	
-	
 	class pol_backpack_rpg: CUP_B_RPGPack_Khaki
 	{
 		scope = 1;
+		hiddenSelectionsTextures[] = {"uk3cb_baf_equipment\backpacks\data\backpack_oli_co.paa","uk3cb_baf_equipment\backpacks\data\backpack_oli_co.paa"};
 		
 		class TransportMagazines
 		{
@@ -70,7 +789,7 @@
 		{
 			class _xx_pkm
 			{
-				magazine = "rhs_100Rnd_762x54mmR_7N26";
+				magazine = "rhs_100Rnd_762x54mmR_green";
 				count = 4;
 			};
 			
@@ -145,7 +864,7 @@
 			};
 			class _xx_stanag
 			{
-				magazine = "rhsgref_30rnd_556x45_m21";
+				magazine = "twc_rhsgref_30rnd_556x45_m21";
 				count = 5;
 			};
 			class _xx_m21
@@ -198,11 +917,6 @@
 			{
 				name = "ACE_packingBandage";
 				count = 15;
-			};
-			class _xxACE_surgKit
-			{
-				name = "ACE_surgicalKit";
-				count = 1;
 			};
 			class _xxACE_personalAidKit
 			{
@@ -266,11 +980,6 @@
 			{
 				name = "ACE_packingBandage";
 				count = 15;
-			};
-			class _xxACE_surgKit
-			{
-				name = "ACE_surgicalKit";
-				count = 1;
 			};
 			class _xxACE_personalAidKit
 			{
@@ -452,11 +1161,6 @@
 			{
 				name = "ACE_packingBandage";
 				count = 15;
-			};
-			class _xxACE_surgKit
-			{
-				name = "ACE_surgicalKit";
-				count = 1;
 			};
 			class _xxACE_personalAidKit
 			{
@@ -667,7 +1371,6 @@
 		};
 	};
 	
-	class UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A;
 	class TWC_Backpack_Modern_Rifleman_heavy: UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A
 	{
 		scope = 1;
@@ -976,15 +1679,10 @@
 		scope = 1;
 		class TransportMagazines
 		{
-			class _xx_Belt
-			{
-				magazine = "UK3CB_BAF_762_100Rnd";
-				count = 1;
-			};
 			class _xx_Belt_T
 			{
 				magazine = "UK3CB_BAF_762_100Rnd_T";
-				count = 1;
+				count = 2;
 			};
 		};
 	};
@@ -993,15 +1691,10 @@
 		scope = 1;
 		class TransportMagazines
 		{
-			class _xx_Belt
-			{
-				magazine = "UK3CB_BAF_762_100Rnd";
-				count = 1;
-			};
 			class _xx_Belt_T
 			{
 				magazine = "UK3CB_BAF_762_100Rnd_T";
-				count = 1;
+				count = 2;
 			};
 		};
 	};
@@ -1113,11 +1806,6 @@
 			{
 				name = "ACE_packingBandage";
 				count = 15;
-			};
-			class _xxACE_surgKit
-			{
-				name = "ACE_surgicalKit";
-				count = 1;
 			};
 			class _xxACE_personalAidKit
 			{

@@ -39,6 +39,14 @@ class CfgPatches {
 			"twc_ana_marksman",
 			"twc_ana_medic",
 			
+			"Modern_UKSF_Base",
+			"Modern_UKSF_Squadleader",
+			"Modern_UKSF_Pointman",
+			"Modern_UKSF_Grenadier",
+			"Modern_UKSF_Marksman",
+			"Modern_UKSF_Medic",
+			"Modern_UKSF_2IC",
+			
 			"Modern_pol_Base",
 			"Modern_pol_rifleman_at",
 			"Modern_pol_grenadier",
@@ -53,7 +61,23 @@ class CfgPatches {
 			"Modern_pol_mg_d",
 			"Modern_pol_commander_d",
 			"Modern_pol_subcommander_d",
-			"Modern_pol_medic_d"
+			"Modern_pol_medic_d",
+			
+			"modern_ger_Base",
+			"Modern_ger_rif_AT",
+			"modern_ger_grenadier",
+			"modern_ger_mg",
+			"modern_ger_commander",
+			"modern_ger_subcommander",
+			"modern_ger_medic",
+			
+			"modern_ger_Base_d",
+			"Modern_ger_rif_AT_d",
+			"modern_ger_grenadier_d",
+			"modern_ger_mg_d",
+			"modern_ger_commander_d",
+			"modern_ger_subcommander_d",
+			"modern_ger_medic_d"
 		};
 
 		weapons[]={};
@@ -64,7 +88,17 @@ class CfgPatches {
 			"A3_Characters_F",
 			"a3_characters_f_beta",
 			"a3_characters_f_gamma",
+			"A3_Data_F",
+			"cup_weapons_m16",
+			"cup_wheeledvehicles_uphmmwv",
+			"rhsusf_c_Caiman",
+			"rhsusf_c_Cougar",
+			"cup_wheeledvehicles_wolfhound",
+			"cup_wheeledvehicles_mastiff",
+			"rhsusf_vehicles",
 			"rhs_c_weapons",
+			"cup_weapons_ak",
+			"rhsgref_c_weapons",
 			"rhsusf_c_weapons",
 			"uk3cb_baf_vehicles_landrover",
 			"uk3cb_baf_weapons_smallarms"
@@ -102,6 +136,23 @@ class CfgFactionClasses {
 	};
 };
 
+class CfgFunctions {
+	class twc_fnc_mortarwalk {
+		class functions {
+			tag = "twc_fnc_mortarwalk";
+			file = "twc_units_modern\functions";
+			class mortarwalk{};
+		};
+	};
+	class twc_fnc_gunwalk {
+		class functions {
+			tag = "twc_fnc_gunwalk";
+			file = "twc_units_modern\functions";
+			class gunwalk{};
+		};
+	};
+};
+
 #include "compositions.hpp"
 class CfgVehicles
 {
@@ -110,6 +161,7 @@ class CfgVehicles
 	
 	#include "modern.hpp"
 	#include "poland.hpp"
+	#include "germany.hpp"
 	
 	#include "insurgency\units.hpp"
 	
@@ -119,3 +171,15 @@ class CfgVehicles
 	
 };
 #include "weapons.hpp"
+
+class CfgGesturesMale
+{
+	class states
+	{
+		class GestureReloadBase;
+		class GestureReloadSPAR_01: GestureReloadBase
+		{
+			speed = -3;
+		};
+	};
+};

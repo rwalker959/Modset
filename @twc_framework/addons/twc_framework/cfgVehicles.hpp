@@ -1,4 +1,4 @@
-class cfgVehicles {
+class CfgVehicles {
 	class Logic;
 	class ModuleOrdnanceMortar_F;
 	
@@ -6,7 +6,7 @@ class cfgVehicles {
 		class AttributesBase;
 		class ModuleDescription;
 	};
-	
+
 	class Module_F: Module_Base {
 		class AttributesBase: AttributesBase {
 			class Default;
@@ -22,125 +22,137 @@ class cfgVehicles {
 			class Player;
 		};
 	};
-	
+
 	class ModuleCAS_F;
 
 	class twc_ModuleMission: Module_F {
-		author="[TWC] jayman";
-		scope=2;
-		displayName="TWC Mission Module";
-		category="twc_missionSetup";
-		function="twc_fnc_missionModuleInit";
-		functionPriority=1;
-		isGlobal=0;
-		isTriggerActivated=0;
+		author = "[TWC] jayman";
+		scope = 2;
+		displayName = "TWC Mission Module";
+		category = "twc_missionSetup";
+		function = "twc_fnc_missionModuleInit";
+		functionPriority = 1;
+		isGlobal = 0;
+		isTriggerActivated = 0;
 		isDisposable = 0;
-		class Arguments
-		{
-			class enabled
-			{
-				displayName="Enabled";
-				description="Enable if this is a TWC Operation";
-				typeName="BOOL";
-				defaultValue=1;
+
+		class Arguments {
+			class enabled {
+				displayName = "Enabled";
+				description = "Enable if this is a TWC Operation";
+				typeName = "BOOL";
+				defaultValue = 1;
 			};
-			class era
-			{
+
+			class era {
 				displayName="ERA";
 				description="Select the ERA";
 				typeName="STRING";
 				defaultValue="modern";
-				class values
-				{
-					class modern
-					{
-						name="Modern";
-						value="modern";
+
+				class values {
+					class modern {
+						name = "Modern";
+						value = "modern";
 					};
-					class coldwar
-					{
-						name="Coldwar";
-						value="coldwar";
+
+					class millennial {
+						name = "Millennial";
+						value = "millennial";
 					};
-					class 1990
-					{
-						name="1990s";
-						value="1990";
+
+					class coldwar {
+						name = "Cold War";
+						value = "coldwar";
 					};
-					class ww2
-					{
-						name="WW2";
-						value="ww2";
+
+					class ww2 {
+						name = "WW2";
+						value = "ww2";
 					};
-					class mmo
-					{
-						name="MMO";
-						value="mmo";
+
+					class mmo {
+						name = "MMO";
+						value = "mmo";
 					};
 				};
 			};
-			class boatSafety
-			{
-				displayName="Added Protection From Boats";
-				description="Enable to keep players from being squished by rhibs.";
-				typeName="BOOL";
-				defaultValue=0;
+
+			class boatSafety {
+				displayName = "Added Protection From Boats";
+				description = "Enable to keep players from being squished by rhibs.";
+				typeName = "BOOL";
+				defaultValue = 0;
 			};
-			class civilianEquipment
-			{
-				displayName="Civilian Equipment";
-				description="Enable to remove goggles and backpacks from civilians";
-				typeName="BOOL";
-				defaultValue=1;
+
+			class civilianEquipment {
+				displayName = "Civilian Equipment";
+				description = "Enable to remove goggles and backpacks from civilians";
+				typeName = "BOOL";
+				defaultValue = 1;
 			};
-			class deadBodies
-			{
-				displayName="Player Base Body Cleanup";
-				description="Range. Set to 0 to Disable";
-				typeName="NUMBER";
-				defaultValue=250;
+
+			class deadBodies {
+				displayName = "Player Base Body Cleanup";
+				description = "Range. Set to 0 to Disable";
+				typeName = "NUMBER";
+				defaultValue = 250;
 			};
-			class disconectGear
-			{
-				displayName="Disconect Gear";
-				description="Removes gear from the previous body when they disconect";
-				typeName="BOOL";
-				defaultValue=1;
+
+			class disconectGear {
+				displayName = "Disconect Gear";
+				description = "Removes gear from the previous body when they disconect";
+				typeName = "BOOL";
+				defaultValue = 1;
 			};
-			class nightGear
-			{
-				displayName="Nighttime Equipment";
-				description="Enable to give NVGs, Flares, and chemlights to units";
-				typeName="BOOL";
-				defaultValue=0;
+
+			class nightGear {
+				displayName = "Nighttime Equipment";
+				description = "Enable to give NVGs, Flares, and chemlights to units";
+				typeName = "BOOL";
+				defaultValue = 0;
 			};
-			class rollSleeves
-			{
-				displayName="Roll Sleeves";
-				description="Enable to allow Rolling Sleeves";
-				typeName="BOOL";
-				defaultValue=0;
+
+			class rollSleeves {
+				displayName = "Roll Sleeves";
+				description = "Enable to allow Rolling Sleeves";
+				typeName = "BOOL";
+				defaultValue = 0;
 			};
-			class run
-			{
-				displayName="Running in Base";
-				description="Set base no run zone. 0 = Run anywhere";
-				typeName="NUMBER";
-				defaultValue=0;
+
+			class run {
+				displayName = "Running in Base";
+				description = "Set base no run zone. 0 = Run anywhere";
+				typeName = "NUMBER";
+				defaultValue = 0;
 			};
-			class safeZone
-			{
-				displayName="Shooting in Base";
-				description="Set number to set size of base no-fire zone. 0 = no safezone";
-				typeName="NUMBER";
-				defaultValue=400;
+
+			class safeZone {
+				displayName = "Shooting in Base";
+				description = "Set number to set size of base no-fire zone. 0 = no safezone";
+				typeName = "NUMBER";
+				defaultValue = 400;
 			};
-			class zuesObjects
-			{
-				displayName="Zeus Objects";
-				description="Enable to give zeus access to all objects";
-				typeName="BOOL";
-				defaultValue=1;
+
+			class zuesObjects {
+				displayName = "Zeus Objects";
+				description = "Enable to give zeus access to all objects";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};
+
+			class disableIntro {
+				displayName = "Legacy Intro";
+				description = "Turns off the camera/intro credits system";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+
+			class specialIntro {
+				displayName = "Special Intro";
+				description = "CfgSound entry of special intro here, otherwise leave blank";
+				typeName = "STRING";
+				defaultValue = "";
 			};
 		};
 	};
@@ -195,37 +207,43 @@ class cfgVehicles {
 	};
 	
 	class twc_moduelCache: Module_F {
-		author="[TWC] jayman";
-		scope=2;
-		displayName="TWC Cache Module";
-		category="twc_missionSetup";
-		function="twc_fnc_cacheModuleInit";
-		functionPriority=1;
-		isGlobal=0;
-		isTriggerActivated=0;
-		isDisposable=0;
-		class Arguments
-		{
-			class enabled
-			{
-				displayName="Enabled";
-				description="Enable for unit caching";
-				typeName="BOOL";
-				defaultValue=1;
+		author = "[TWC] jayman";
+		scope = 2;
+		displayName = "Cache Configuration";
+		category = "twc_cache_modules";
+		function = "twc_fnc_cacheModuleInit";
+		functionPriority = 1;
+		isGlobal = 0;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+
+		class Arguments {
+			class enabled {
+				displayName = "Enabled";
+				description = "Enable Caching (highly recommended)";
+				typeName = "BOOL";
+				defaultValue = 1;
 			};
-			class aiRange
-			{
-				displayName="AI Range";
-				description="Range at which AI will cache. 0 to disable.";
-				typeName="NUMBER";
-				defaultValue=1500;
+
+			class aiRange {
+				displayName = "AI Range";
+				description = "Range at which AI will cache. 0 to disable.";
+				typeName = "NUMBER";
+				defaultValue = 1500;
 			};
-			class vehicleRange
-			{
-				displayName="Vehicle Caching";
-				description="Range at which vehicles will cache. 0 to disable.";
-				typeName="NUMBER";
-				defaultValue=2000;
+
+			class vehicleRange {
+				displayName = "Vehicle Caching";
+				description = "Range at which vehicles will cache. 0 to disable.";
+				typeName = "NUMBER";
+				defaultValue = 2000;
+			};
+
+			class urbanRange {
+				displayName = "Urban Caching";
+				description = "Range at which urban units will cache. 0 to disable.";
+				typeName = "NUMBER";
+				defaultValue = 750;
 			};
 		};
 	};
@@ -250,32 +268,6 @@ class cfgVehicles {
 			};
 		};
 	};
-
-	class twc_moduleHealPlayer: Module_F {
-		author="[TWC] jayman";
-		category="twc_zeus";
-		scope=1;
-		scopeCurator = 2;
-		functionPriority=1;
-		isGlobal=1;
-		isTriggerActivated=0;
-		function="twc_fnc_healPlayer";
-		curatorCanAttach = 1;
-		displayName = "Heal Player";
-	};
-	
-	class twc_moduleKillPlayer: Module_F {
-		author="[TWC] jayman";
-		category="twc_zeus";
-		scope=1;
-		scopeCurator = 2;
-		functionPriority=1;
-		isGlobal=1;
-		isTriggerActivated=0;
-		function="twc_fnc_killPlayer";
-		curatorCanAttach = 1;
-		displayName = "Kill Player";
-	};
 	
 	class twc_modulesetSpectator: Module_F {
 		author="[TWC] jayman";
@@ -290,17 +282,30 @@ class cfgVehicles {
 		displayName = "Toggle Unit ACRE Spectator";
 	};
 
-	class twc_moduleMedicalInfo: Module_F {
-		author="[TWC] jayman";
+	class twc_modulegunwalkzeus: Module_F {
+		author="[TWC] Hobbs";
 		category="twc_zeus";
 		scope=1;
 		scopeCurator = 2;
 		functionPriority=1;
 		isGlobal=1;
 		isTriggerActivated=0;
-		function="twc_fnc_medicalInfo";
+		function="twc_fnc_gunwalkzeus";
 		curatorCanAttach = 1;
-		displayName = "Hint Unit Medical Info";
+		displayName = "Activate AI Heavy Gun System";
+	};
+
+	class twc_modulemortarwalkzeus: Module_F {
+		author="[TWC] Hobbs";
+		category="twc_zeus";
+		scope=1;
+		scopeCurator = 2;
+		functionPriority=1;
+		isGlobal=1;
+		isTriggerActivated=0;
+		function="twc_fnc_mortarwalkzeus";
+		curatorCanAttach = 1;
+		displayName = "Activate AI Artillery System";
 	};
 
 	class TWC_Module_CreateTask: Module_F {
@@ -824,6 +829,13 @@ class cfgVehicles {
 				typeName="String";
 				defaultValue="";
 			};
+			class Script
+			{
+				displayName="Post-WP Script";
+				description="Script to execute once infantry has reached the attack location.";
+				typeName="String";
+				defaultValue="";
+			};
 		};
 		class ModuleDescription: ModuleDescription {
 			description = "Call in airborne group";
@@ -872,8 +884,25 @@ class cfgVehicles {
 		};
 	};
 	
-	class TWC_Module_Amient_AttackPlane: ModuleCAS_F
+	class TWC_Module_AmbientAA: Module_F
 	{
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Ambient AA";
+		function = "twc_fnc_moduleAmbientAA";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\ambientAA_ca.paa";
+		functionPriority = 1;
+		class ModuleDescription: ModuleDescription {
+			description = "Call in Attack Plane";
+			sync[] = {""};
+		};
+	};
+	
+	class TWC_Module_Amient_AttackPlane: ModuleCAS_F {
 		author = "[TWC] Rik";
 		category = "twc_mission_framework";
 		displayName = "Ambient Attack Plane";
@@ -921,11 +950,11 @@ class cfgVehicles {
 				displayName = "Plane";
 				class values
 				{
-					/*class Spitfire
+					class Spitfire
 					{
-						name = "Spitfire";
+						name = "Spitfire (UK)";
 						value = "spitfire_v_G";
-					}; Todo after the spitfire gets fixed.*/
+					};
 					class Hellcat_US
 					{
 						name = "Hellcat (US)";
@@ -936,6 +965,96 @@ class cfgVehicles {
 						name = "Hellcat (UK)";
 						value = "fow_va_f6f_c_faa";
 					};
+					class P47
+					{
+						name = "P-47 (US)";
+						value = "LIB_P47";
+					};
+					class SU34_RU
+					{
+						name = "Su-34 (RU)";
+						value = "CUP_O_SU34_RU";
+					};
+					class SU25_RU
+					{
+						name = "Su-25 (RU)";
+						value = "CUP_O_Su25_Dyn_RU";
+					};
+					class SU17_RU
+					{
+						name = "Su-17 (RU)";
+						value = "BCCCCP_Su17";
+					};
+					class SU34_SLA
+					{
+						name = "SU-34 (SLA)";
+						value = "CUP_O_SU34_SLA";
+					};
+					class SU25_SLA
+					{
+						name = "SU-25 (SLA)";
+						value = "CUP_O_Su25_Dyn_SLA";
+					};
+					class SU25_TK
+					{
+						name = "SU-25 (TK)";
+						value = "CUP_O_Su25_Dyn_TKA";
+					};
+					class L39_TK
+					{
+						name = "L-39 (TK)";
+						value = "CUP_O_L39_TK";
+					};
+					class AV8B_USMC
+					{
+						name = "AV-8B (USMC)";
+						value = "CUP_B_AV8B_DYN_USMC";
+					};
+					class F35B_USMC
+					{
+						name = "F35B (USMC)";
+						value = "CUP_B_F35B_USMC";
+					};
+					class A10_US
+					{
+						name = "A-10 (US)";
+						value = "CUP_B_A10_DYN_USA";
+					};
+					class HGR3_UK
+					{
+						name = "Harrier GR.3 (UK)";
+						value = "TWC_Vehicle_ColdWar_HarrierGR3_RAF";
+					};
+					class HGR5_UK
+					{
+						name = "Harrier GR.5 (UK)";
+						value = "TWC_Vehicle_Millennial_HarrierGR5_RAF";
+					};
+					class HGR9_UK
+					{
+						name = "Harrier GR.9 (UK)";
+						value = "TWC_Vehicle_Modern_HarrierGR9_RAF";
+					};
+					class F35_UK
+					{
+						name = "F35B (UK)";
+						value = "CUP_B_F35B_BAF";
+					};
+					class L39_CZ
+					{
+						name = "L-39 (CZ)";
+						value = "CUP_B_L39_CZ_GREY";
+					};
+					class SU25_CDF
+					{
+						name = "SU-25 (CDF)";
+						value = "CUP_B_Su25_Dyn_CDF";
+					};
+					class SU34_CDF
+					{
+						name = "SU-34 (CDF)";
+						value = "CUP_B_SU34_CDF";
+					};
 				};
 			};
 		};
@@ -943,6 +1062,12 @@ class cfgVehicles {
 			description = "Call in Ambient Attack Plane, automatically despawned";
 			sync[] = {""};
 		};
+	};
+	class TWC_Module_Amient_AttackPlane_Zeus: TWC_Module_Amient_AttackPlane {
+		scope=1;
+		scopeCurator = 2;
+		isTriggerActivated=0;
+		curatorCanAttach = 1;
 	};
 	
 	class TWC_Module_CommandMessage: Module_F {
@@ -1149,7 +1274,7 @@ class cfgVehicles {
 
 	class TWC_Module_DisableCaching: Module_F {
 		author = "[TWC] Bosenator & jayman";
-		category = "twc_mission_framework";
+		category = "twc_cache_modules";
 		displayName = "Disable Caching on Units";
 		function = "twc_fnc_moduleDisableCaching";
 		scope = 2;
@@ -1161,6 +1286,43 @@ class cfgVehicles {
 		class Arguments {};
 		class ModuleDescription: ModuleDescription {
 			description = "Disable Cache On Unit(s)";
+			sync[] = {"AnyAI", "AnyVehicle"};
+		};
+	};
+
+	class TWC_Module_TriggerUncache: Module_F {
+		author = "[TWC] Bosenator & jayman";
+		category = "twc_cache_modules";
+		displayName = "Trigger Unit(s) Uncache";
+		function = "twc_fnc_moduleTriggerUncache";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\disable_caching_ca.paa";
+		functionPriority = 1;
+		class Arguments {};
+		class ModuleDescription: ModuleDescription {
+			description = "Disable Cache On Unit(s)";
+			sync[] = {"AnyAI", "AnyVehicle"};
+		};
+	};
+
+	class TWC_Module_UrbanUnitsCache: Module_F {
+		author = "[TWC] Bosenator & jayman";
+		category = "twc_cache_modules";
+		displayName = "Set Urban Unit(s)";
+		function = "twc_fnc_moduleUrbanUnitsCache";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\disable_caching_ca.paa";
+		functionPriority = 1;
+
+		class Arguments {};
+		class ModuleDescription: ModuleDescription {
+			description = "Set Urban Unit(s)";
 			sync[] = {"AnyAI", "AnyVehicle"};
 		};
 	};
@@ -1194,6 +1356,153 @@ class cfgVehicles {
 		class ModuleDescription: ModuleDescription {
 			description = "Make unit ignore the Forward Base";
 			sync[] = {"AnyAI"};
+		};
+	};
+	
+	class TWC_Module_gunwalking: Module_F {
+		author = "[TWC] Hobbs";
+		category = "twc_missionSetup";
+		displayName = "Enable AI Heavy Weapon System";
+		function = "twc_fnc_modulegunwalk";
+		scope = 2;
+		scopeCurator = 2;
+		curatorCanAttach = 1;
+		isGlobal = 0;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\ignore_foward_base_ca.paa";
+		functionPriority = 1;
+		class Arguments {};
+		class ModuleDescription: ModuleDescription {
+			description = "Activate advanced AI learning for synced static weapons, tanks, attack helicopters and other heavy assets";
+			sync[] = {"AnyAI", "AnyVehicle"};
+		};
+	};
+	
+	class TWC_Module_mortarwalking: Module_F {
+		author = "[TWC] Hobbs";
+		category = "twc_missionSetup";
+		displayName = "Enable AI Artillery System";
+		function = "twc_fnc_modulemortarwalk";
+		scope = 2;
+		scopeCurator = 2;
+		curatorCanAttach = 1;
+		isGlobal = 0;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\ignore_foward_base_ca.paa";
+		functionPriority = 1;
+		class Arguments {};
+		class ModuleDescription: ModuleDescription {
+			description = "Activate advanced AI learning for synced mortars and other indirect fire pieces";
+			sync[] = {"AnyAI", "AnyVehicle"};
+		};
+	};
+
+	class TWC_Module_ACEInteract: Module_F {
+		author = "[TWC] Bosenator";
+		category = "twc_missionSetup";
+		displayName = "Add ACE Interact";
+		function = "twc_fnc_moduleACEInteract";
+		scope = 2;
+		scopeCurator = 0;
+		curatorCanAttach = 0;
+		isGlobal = 0;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\ace_interact_ca.paa";
+		functionPriority = 1;
+		
+		class Arguments {
+			class interactName {
+				displayName = "Interaction Display Name";
+				description = "What should it say when they interact?";
+				typeName = "String";
+				defaultValue = "";
+			};
+			
+			class interactCondition {
+				displayName = "Interaction Condition";
+				description = "Condition Logic for it to exist";
+				typeName = "String";
+				defaultValue = "true";
+			};
+			
+			class interactExecute {
+				displayName = "Interaction Execute";
+				description = "Code to Execute once Interacted";
+				typeName = "String";
+				defaultValue = "hint 'example';";
+			};
+		};
+		
+		class ModuleDescription: ModuleDescription {
+			description = "Add ACE Interaction";
+			sync[] = {"AnyStaticObject"};
+		};
+	};
+	
+	class TWC_Module_AmbientSound: Module_F {
+		author = "[TWC] Bosenator";
+		category = "twc_mission_framework";
+		displayName = "Ambient Sound";
+		function = "twc_fnc_moduleAmbientSound";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\ambient_sound_ca.paa";
+		functionPriority = 1;
+		
+		class Arguments {
+			class soundFilePath {
+				displayName = "Sound File Path";
+				description = "Sound File Path...";
+				typeName = "String";
+				defaultValue = "CSA38II_sounds\a_battle\csa38_battle1.ogg";
+			};
+			
+			class min {
+				displayName = "min time";
+				description = "min time to wait between loops";
+				typeName = "Number";
+				defaultValue = 30;
+			};
+			
+			class mid {
+				displayName = "mid time";
+				description = "mid time to wait between loops";
+				typeName = "Number";
+				defaultValue = 45;
+			};
+			
+			class max {
+				displayName = "max time";
+				description = "max time to wait between loops";
+				typeName = "Number";
+				defaultValue = 45;
+			};
+			
+			class condition {
+				displayName = "Stop Condition";
+				description = "Condition to check when to stop";
+				typeName = "String";
+				defaultValue = "triggerActivated forExample";
+			};
+			
+			class isInside {
+				displayName = "Is Inside?";
+				description = "Is the sound coming from inside something?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			
+			class soundArgs {
+				displayName = "soundArgs array";
+				description = "[volume, pitch, distance]";
+				typeName = "String";
+				defaultValue = "[4, 1, 1000]";
+			};
 		};
 	};
 

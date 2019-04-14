@@ -55,6 +55,14 @@ class CfgFactionClasses {
 		priority = 2;
 		side = 1;
 	};
+	
+	class TWC_WW2 {
+		displayName = "TWC Operations - WW2";
+		author = "Saxon, Bosenator, Rik";
+		icon = "TWClogo.paa";
+		priority = 2;
+		side = 2;
+	};
 };
 
 // CfgEditorCategories is used for props
@@ -131,7 +139,7 @@ class CfgEditorSubcategories {
 	// Unit Catergories
 	class TWC_Training {
 		displayName = "Men (Training)";
-        };
+	};
 
 	// Infantry Related
 	class TWC_Infantry_Regular_Woodland {
@@ -150,6 +158,10 @@ class CfgEditorSubcategories {
 		displayName = "Infantry (Tropic)";
 	};
 	
+	class TWC_Infantry_Regular_NBC {
+		displayName = "Infantry (NBC)";
+	};
+	
 	class TWC_Infantry_Dismounted_Woodland {
 		displayName = "Infantry (Dismounted, Woodland)";
 	};
@@ -164,6 +176,10 @@ class CfgEditorSubcategories {
 	
 	class TWC_Infantry_Dismounted_Tropic {
 		displayName = "Infantry (Dismounted, Tropic)";
+	};
+	
+	class TWC_Infantry_Dismounted_NBC {
+		displayName = "Infantry (Dismounted, NBC)";
 	};
 	
 	class TWC_Infantry_Airborne_Woodland {
@@ -190,6 +206,10 @@ class CfgEditorSubcategories {
 		displayName = "Infantry (COIN, Tropic)";
 	};
 	
+	class TWC_Infantry_COIN_NBC {
+		displayName = "Infantry (COIN, NBC)";
+	};
+	
 	class TWC_Infantry_COIN_Dismounted_Woodland {
 		displayName = "Infantry (COIN, Dismounted, Woodland)";
 	};
@@ -204,5 +224,9 @@ class CfgEditorSubcategories {
 	
 	class TWC_Infantry_COIN_Dismounted_Tropic {
 		displayName = "Infantry (COIN, Dismounted, Tropic)";
+	};
+	
+	class TWC_Infantry_COIN_Dismounted_NBC {
+		displayName = "Infantry (COIN, Dismounted, NBC)";
 	};
 };

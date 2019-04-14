@@ -6,7 +6,7 @@ class ACE_Medical_Actions {
 		};
 		
 		class QuikClot: FieldDressing {
-			treatmentTime = 4;
+			treatmentTime = 3;
 		};
 		
 		class PackingBandage: FieldDressing {
@@ -14,26 +14,7 @@ class ACE_Medical_Actions {
 		};
 		
 		class ElasticBandage: FieldDressing {
-			treatmentTime = 15;
-		};
-		
-		class CPR: FieldDressing {
-			callbackSuccess = "twc_medical_fnc_action";
-			animationCaller = "AinvPknlMstpSnonWnonDr_medic0";
-			animationCallerProne = "AinvPknlMstpSnonWnonDr_medic0";
-		};
-		
-		class Defib: CPR {
-			displayName = "Defibrillate";
-			displayNameProgress = "Defibrillating...";
-			treatmentLocations[] = {"MedicalVehicle"};
-			allowedSelections[] = {"body"};
-			condition = "[(_this select 0), (_this select 1)] call twc_medical_fnc_canDefib";
-			allowSelfTreatment = 0;
-			requiredMedic = 1;
-			treatmentTime = 10;
-			patientStateCondition = 1;
-			callbackSuccess = "twc_medical_fnc_action_Defib";
+			treatmentTime = 12;
 		};
 		
 		class CheckPulse;

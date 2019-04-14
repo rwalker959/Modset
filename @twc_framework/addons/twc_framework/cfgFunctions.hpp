@@ -4,6 +4,7 @@ class CfgFunctions {
 			file = "twc_framework\functions";
 			class AirAssault {};
 			class Airborne {};
+			class AmbientAA {};
 			class Artillery{};
 			class AttackHelicopter{};
 			class AttackPlane {};
@@ -35,10 +36,17 @@ class CfgFunctions {
 			class toggleSpectator {};
 			class grabComposition {};
 			class sendCTabMessage {};
-			class isHigherRank {};
 			class GliderTakeOff {};
 			class confiscateBadItems {};
+			class silentSafety {};
+			class gunwalk {};
+			class mortarwalk {};
 			class init{};
+			class addACEInteraction {};
+			
+			/** AMBIENT AIRCRAFT **/
+			class ambientFlyBy {};
+			class ambientFormationFlyBy {};
 		};
 		
 		class modules {
@@ -51,7 +59,6 @@ class CfgFunctions {
 			class disconnectGear{};
 			class missionModuleInit{};
 			class moduleDebug{};
-			class nightGear{};
 			class run{};
 			class safeZone{};
 			class zeus{};
@@ -64,7 +71,9 @@ class CfgFunctions {
 			class moduleDefend{};
 			class moduleDummyBullets {};
 			class moduleAirAssault{};
+			class moduleAirborne {};
 			class moduleAttackPlane{};
+			class moduleAmbientAA;
 			class moduleCommandMessage{};
 			class moduleLightsSwitch{};
 			class moduleIntelHint{};
@@ -74,6 +83,12 @@ class CfgFunctions {
 			class moduleGrabComposition {};
 			class moduleIgnoreForwardBase {};
 			class moduleGliderTakeOff {};
+			class moduleTriggerUncache {};
+			class moduleUrbanUnitsCache {};
+			class modulegunwalk {};
+			class modulemortarwalk {};
+			class moduleACEInteract {};
+			class moduleAmbientSound {};
 		};
 		
 		class cache {
@@ -99,11 +114,8 @@ class CfgFunctions {
 
 		class curator {
 			file = "twc_framework\curator";
-			class healPlayer {};
-			class killPlayer {};
 			class setSpectator {};
-			class medicalInfo {};
-			class toggleCon {};
+			// medical moved to twc_medical
 		};
 
 		class artillery {

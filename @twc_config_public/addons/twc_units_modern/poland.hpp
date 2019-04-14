@@ -44,7 +44,7 @@
 		{
 			"ACE_fieldDressing",
 			"ACE_fieldDressing",
-			"rhsusf_ANPVS_14",
+			
 			"ACE_EarPlugs",
 			"ACRE_PRC148",
 			"ACE_fieldDressing",
@@ -72,7 +72,7 @@
 		{
 			"ACE_fieldDressing",
 			"ACE_fieldDressing",
-			"rhsusf_ANPVS_14",
+			
 			"ACE_EarPlugs",
 			"ACRE_PRC148",
 			"ACE_fieldDressing",
@@ -96,33 +96,33 @@
 		};
 		magazines[]=
 		{
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
 			"HandGrenade",
 			"HandGrenade",
 			"SmokeShell",
 			"SmokeShell",
-			"B_IR_Grenade"
+			"SmokeShell"
 		};
 		Respawnmagazines[]=
 		{
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
 			"HandGrenade",
 			"HandGrenade",
 			"SmokeShell",
 			"SmokeShell",
-			"B_IR_Grenade"
+			"SmokeShell"
 		};
 	};
 
@@ -215,11 +215,11 @@
 		};
 		magazines[]=
 		{
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
 			"rhs_VOG25",
 			"rhs_VOG25",
 			"rhs_VOG25",
@@ -227,15 +227,15 @@
 			"rhs_VOG25",
 			"HandGrenade",
 			"SmokeShell",
-			"B_IR_Grenade"
+			"SmokeShell"
 		};
 		Respawnmagazines[]=
 		{
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
-			"rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
+			"twc_rhsgref_30rnd_556x45_m21",
 			"rhs_VOG25",
 			"rhs_VOG25",
 			"rhs_VOG25",
@@ -243,7 +243,7 @@
 			"rhs_VOG25",
 			"HandGrenade",
 			"SmokeShell",
-			"B_IR_Grenade"
+			"SmokeShell"
 		};
 	};
 	
@@ -291,23 +291,23 @@
 		};
 		magazines[]=
 		{
-			"rhs_100Rnd_762x54mmR_7N26",
+			"rhs_100Rnd_762x54mmR_green",
 			"HandGrenade",
 			"HandGrenade",
 			"SmokeShell",
 			"SmokeShell",
 			"SmokeShell",
-			"B_IR_Grenade"
+			"SmokeShell"
 		};
 		Respawnmagazines[]=
 		{
-			"rhs_100Rnd_762x54mmR_7N26",
+			"rhs_100Rnd_762x54mmR_green",
 			"HandGrenade",
 			"HandGrenade",
 			"SmokeShell",
 			"SmokeShell",
 			"SmokeShell",
-			"B_IR_Grenade"
+			"SmokeShell"
 		};
 	};
 	

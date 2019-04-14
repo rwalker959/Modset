@@ -27,8 +27,25 @@ class CfgWeapons {
 		};
 	};
 
+	class ACE_fieldDressing: ACE_ItemCore {
+		displayName = "Field Dressing";
+		//descriptionShort = "A medium bandage with a medium chance of coming loose.";
+		//descriptionUse = "A medium bandage with a medium chance of coming loose.";
+	};
+	
+	class ACE_packingBandage: ACE_ItemCore {
+		displayName = "Packing Bandage";
+		//descriptionShort = "A decent bandage with a low chance of coming loose.";
+		//descriptionUse = "A decent bandage with a low chance of coming loose.";
+	};
+	
+	class ACE_elasticBandage: ACE_ItemCore { displayName = "Elastic Bandage"; };
+	class ACE_quikclot: ACE_ItemCore { displayName = "QuikClot"; };
+
 	#define ADD_SUTURE_KIT(NUMBER) class TWC_Item_Medical_SutureKit_##NUMBER : TWC_Item_Medical_SutureKit_1 { \
 		displayName = __EVAL("Suture Kit (" + str NUMBER + " Threads)"); \
+		descriptionShort = __EVAL(str NUMBER + " sutures remaining, one consumed on use"); \
+		descriptionUse = __EVAL(str NUMBER + " sutures remaining, one consumed on use"); \
 	}
 
 	ADD_SUTURE_KIT(2);
@@ -58,5 +75,7 @@ class CfgWeapons {
 	class TWC_Item_Medical_SutureKit_25: TWC_Item_Medical_SutureKit_1 {
 		scope = 2;
 		displayName = "Suture Kit (25 Threads)";
+		descriptionShort = "25 sutures remaining, one consumed on use";
+		descriptionUse = "25 sutures remaining, one consumed on use";
 	};
 };

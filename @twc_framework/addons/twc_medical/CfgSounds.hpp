@@ -1,13 +1,9 @@
 class CfgSounds {
+	sounds[] = {TWC_Sound_Medical_Suturing};
+	
 	class TWC_Sound_Medical_Suturing {
 		name = "TWC_Sound_Medical_Suturing";
-		sound[] = {"\twc_medical\sounds\suturing.ogg", 3, 1};
-		titles[] = {};
-	};
-
-	class TWC_Sound_Medical_Defib {
-		name = "TWC_Sound_Medical_Defib";
-		sound[] = {"\twc_medical\sounds\defib.ogg", 2, 1};
+		sound[] = {"\twc_medical\sounds\suturing.ogg", db + 10, 1};
 		titles[] = {};
 	};
 };

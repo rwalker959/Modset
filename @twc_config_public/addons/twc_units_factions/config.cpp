@@ -102,13 +102,69 @@ class CfgPatches
 			"Tak_twc_ins_Men_B1",
 			"Tak_twc_ins_Men_B2",
 			"Tak_twc_ins_Men_R1",
+			"Tak_twc_ins_Men_R1_2",
+			"Tak_twc_ins_Men_R1_3",
+			"Tak_twc_ins_Men_R1_4",
+			"Tak_twc_ins_Men_R1_5",
+			"Tak_twc_ins_Men_R1_6",
+			"Tak_twc_ins_Men_R1_7",
+			"Tak_twc_ins_Men_R1_8",
 			"Tak_twc_ins_Men_RPG1",
+			"Tak_twc_ins_Men_RPG1_2",
+			"Tak_twc_ins_Men_RPG1_3",
+			"Tak_twc_ins_Men_RPG1_4",
+			"Tak_twc_ins_Men_RPG1_5",
+			"Tak_twc_ins_Men_RPG1_6",
+			"Tak_twc_ins_Men_RPG1_7",
+			"Tak_twc_ins_Men_RPG1_8",
 			"Tak_twc_ins_Men_R2",
+			"Tak_twc_ins_Men_R2_2",
+			"Tak_twc_ins_Men_R2_3",
+			"Tak_twc_ins_Men_R2_4",
+			"Tak_twc_ins_Men_R2_5",
+			"Tak_twc_ins_Men_R2_6",
+			"Tak_twc_ins_Men_R2_7",
+			"Tak_twc_ins_Men_R2_8",
 			"Tak_twc_ins_Men_AR1",
+			"Tak_twc_ins_Men_AR1_2",
+			"Tak_twc_ins_Men_AR1_3",
+			"Tak_twc_ins_Men_AR1_4",
+			"Tak_twc_ins_Men_AR1_5",
+			"Tak_twc_ins_Men_AR1_6",
+			"Tak_twc_ins_Men_AR1_7",
+			"Tak_twc_ins_Men_AR1_8",
 			"Tak_twc_ins_Men_MG1",
+			"Tak_twc_ins_Men_MG1_2",
+			"Tak_twc_ins_Men_MG1_3",
+			"Tak_twc_ins_Men_MG1_4",
+			"Tak_twc_ins_Men_MG1_5",
+			"Tak_twc_ins_Men_MG1_6",
+			"Tak_twc_ins_Men_MG1_7",
+			"Tak_twc_ins_Men_MG1_8",
 			"Tak_twc_ins_Men_R3",
+			"Tak_twc_ins_Men_R3_2",
+			"Tak_twc_ins_Men_R3_3",
+			"Tak_twc_ins_Men_R3_4",
+			"Tak_twc_ins_Men_R3_5",
+			"Tak_twc_ins_Men_R3_6",
+			"Tak_twc_ins_Men_R3_7",
+			"Tak_twc_ins_Men_R3_8",
 			"Tak_twc_ins_Men_a1",
+			"Tak_twc_ins_Men_a1_2",
+			"Tak_twc_ins_Men_a1_3",
+			"Tak_twc_ins_Men_a1_4",
+			"Tak_twc_ins_Men_a1_5",
+			"Tak_twc_ins_Men_a1_6",
+			"Tak_twc_ins_Men_a1_7",
+			"Tak_twc_ins_Men_a1_8",
 			"Tak_twc_ins_Men_a2",
+			"Tak_twc_ins_Men_a2_2",
+			"Tak_twc_ins_Men_a2_3",
+			"Tak_twc_ins_Men_a2_4",
+			"Tak_twc_ins_Men_a2_5",
+			"Tak_twc_ins_Men_a2_6",
+			"Tak_twc_ins_Men_a2_7",
+			"Tak_twc_ins_Men_a2_8",
 			"Tak_twc_ins_Men_sniper",
 			"Tak_twc_ins_Men_sniper_h",
 			"Tak_twc_ins_Men_Scout",
@@ -138,6 +194,17 @@ class CfgPatches
 			"twc_heavy_men_mk",
 			"twc_heavy_men_rif_ak74",
 			"twc_heavy_men_rif_m16",
+			
+			"syr_twc_ins_Men_rif1",
+			"syr_twc_ins_Men_rif2",
+			"syr_twc_ins_Men_rif3",
+			"syr_twc_ins_Men_gren1",
+			"syr_twc_ins_Men_gren2",
+			"syr_twc_ins_Men_rpg1",
+			"syr_twc_ins_Men_rpg2",
+			"syr_twc_ins_Men_marksman",
+			"syr_twc_ins_Men_mg1",
+			"syr_twc_ins_Men_mg2",
 			
 			"twc_greek_officer",
 			"twc_greek_rifleman",
@@ -292,6 +359,12 @@ class CfgFactionClasses
 		priority=2;
 		side=1;
 	};
+	class ger_units
+	{
+		displayName="Bundeswehr (TWC)";
+		priority=2;
+		side=1;
+	};
 	class nac_units
 	{
 		displayName="National Colombian Army";
@@ -302,6 +375,13 @@ class CfgFactionClasses
 	class TWC_Tak_Ins
 	{
 		displayName="Takistani Militia (TWC)";
+		priority=2;
+		side=2;
+	};
+
+	class TWC_Syr_Ins
+	{
+		displayName="Syrian Militia (TWC)";
 		priority=2;
 		side=2;
 	};
@@ -318,6 +398,7 @@ class CfgVehicles
 	class rhs_sidor;
 	class twc_Backpack_m60: CUP_B_AlicePack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_mgMags
@@ -329,6 +410,7 @@ class CfgVehicles
 	};
 		class twc_Backpack_m249: CUP_B_AlicePack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_mgMags
@@ -341,6 +423,7 @@ class CfgVehicles
 
 		class twc_Backpack_m3maaws: CUP_B_AlicePack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_mgMags
@@ -353,6 +436,7 @@ class CfgVehicles
 
 	class Afr_Backpack_Rifleman: CUP_B_AlicePack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_AKMags
@@ -369,6 +453,7 @@ class CfgVehicles
 	};
 	class Afr_Backpack_MG: CUP_B_AlicePack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_PKMags
@@ -380,6 +465,7 @@ class CfgVehicles
 	};
 	class Afr_Backpack_AT: CUP_B_RPGPack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_AKMags
@@ -396,6 +482,7 @@ class CfgVehicles
 	};
 	class greek_Backpack_AT: CUP_B_RPGPack_Khaki
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_RPG7
@@ -406,20 +493,92 @@ class CfgVehicles
 		};
 	};
 	
-		class Backpack_AT_og7: CUP_B_RPGPack_Khaki
+	class Backpack_AT_og7_olive: CUP_B_AlicePack_Khaki
 	{
+		scope = 1;
+		hiddenselectionstextures[] = {"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_small_oli_co.paa"};
 		class TransportMagazines
 		{
 			class _xx_RPG7
 			{
 				magazine="CUP_OG7_M";
+				count=7;
+			};
+		};
+	};
+	
+	
+	class twc_Backpack_MG_olive: CUP_B_AlicePack_Khaki
+	{
+		scope = 1;
+		hiddenselectionstextures[] = {"\A3\Weapons_F\Ammoboxes\Bags\Data\backpack_small_oli_co.paa"};
+		class TransportMagazines
+		{
+			class _xx_belt
+			{
+				magazine="CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
 				count=4;
+			};
+		};
+	};
+	
+	class CUP_B_RUS_Backpack;
+	class Backpack_AT_pg7_spet: CUP_B_RUS_Backpack
+	{
+		scope = 1;
+		class TransportMagazines
+		{
+			class _xx_RPG7
+			{
+				magazine="CUP_PG7V_M";
+				count=5;
+			};
+		};
+	};
+	
+		class Backpack_AT_og7: CUP_B_RPGPack_Khaki
+	{
+		scope = 1;
+		class TransportMagazines
+		{
+			class _xx_RPG7
+			{
+				magazine="rhs_rpg7_PG7V_mag";
+				count=4;
+			};
+		};
+	};
+	class twc_back_webbing;
+		class twc_Backpack_spc_VOG25: twc_back_webbing
+	{
+		scope = 1;
+		class TransportMagazines
+		{
+			class _xx_VOG25
+			{
+				magazine="rhs_VOG25";
+				count=5;
+			};
+		};
+	};
+	
+	class CUP_B_CivPack_WDL;
+		class twc_Backpack_civ_VOG25: CUP_B_CivPack_WDL
+	{
+		scope = 1;
+		class TransportMagazines
+		{
+			class _xx_VOG25
+			{
+				magazine="rhs_VOG25";
+				count=5;
 			};
 		};
 	};
 	
 			class Backpack_twc_bombmaker: rhs_sidor
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_ied1
@@ -455,6 +614,7 @@ class CfgVehicles
 	
 			class Backpack_rpk: rhs_sidor
 	{
+		scope = 1;
 		class TransportMagazines
 		{
 			class _xx_RPk
@@ -487,5 +647,6 @@ accuracy=0.01;
 	#include "takistanins.hpp"
 	#include "farcrebels.hpp"
 	#include "gen_heavy.hpp"
+	#include "syrins.hpp"
 };
 	#include "weapons.hpp"

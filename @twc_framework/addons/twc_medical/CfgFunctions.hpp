@@ -5,7 +5,7 @@ class CfgFunctions {
 		
 		class ace_medical {
 			class displayPatientInformation {
-				file = "twc_medical\fncs\fn_displayPatientInformation.sqf";
+				file = "twc_medical\functions\fn_displayPatientInformation.sqf";
 			};
 		};
 	};
@@ -15,11 +15,11 @@ class CfgFunctions {
 		
 		class ace_medical_menu {
 			class updateUIInfo {
-				file = "twc_medical\fncs\fn_updateUIInfo.sqf";
+				file = "twc_medical\functions\fn_updateUIInfo.sqf";
 			};
 			
 			class updateBodyImage {
-				file = "twc_medical\fncs\fn_updateBodyImage.sqf";
+				file = "twc_medical\functions\fn_updateBodyImage.sqf";
 			};
 		};
 	};
@@ -27,32 +27,25 @@ class CfgFunctions {
 	class twc_medical {
 		tag = "twc_medical";
 		class init {
-			file = "twc_medical\fncs";
+			file = "twc_medical\functions";
+			// Init
+			class init {};
+			class serverInit {};
+			
 			// Generics
 			class addTime {};
-			class init { postInit = 1; };
 			class getBloodVolume {};
 			class extendedVitalLoop {};
 			class logToRPT {};
-			class moduleMedical {};
 			class fullyBandageUnit {};
+			class fullHealWithoutLog {};
+			class removeMedicalItem {};
 
 			// Uncon Loop
 			class extendedUnconLoop {};
 			class handleUncon {};
 			class handleAIUncon {};
-
-			// CPR
-			class action {};
-			class canCPR {};
-			class CPR {};
-			class CPR_Local {};
-
-			// Defib
-			class action_Defib {};
-			class canDefib {};
-			class Defib {};
-			class Defib_Local {};
+			class unconSoundLoop {};
 
 			// Suture
 			class canSuture {};
@@ -60,11 +53,26 @@ class CfgFunctions {
 			class sutureKitSuccess {};
 			class sutureKitProgress {};
 			class sutureKitFailure {};
-			class removeSutureThread {};
 			class selectSutureWound {};
-
+			
 			// Bloodlust Compat & Insta-Kill
 			class bloodlustInit {};
+		};
+		
+		class modules {
+			file = "twc_medical\modules";
+			
+			class moduleMedical {}; // public CPR chance
+		};
+		
+		class curator {
+			file = "twc_medical\curator";
+			
+			class resuscitateUnit {};
+			class fullHealUnit {};
+			class killUnit {};
+			class inspectUnit {};
+			class logUnit {}; // adds the above to RPT
 		};
 	};
 };

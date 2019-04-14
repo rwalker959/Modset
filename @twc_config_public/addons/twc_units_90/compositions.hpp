@@ -221,6 +221,13 @@ class CfgGroups
 							rank = "PRIVATE";
 							position[] = {17,0,0};
 						};
+						class Unit9
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_w_medic";
+							rank = "PRIVATE";
+							position[] = {19,0,0};
+						};
 					};
 					class 1990_Vehicle_Crew
 					{
@@ -230,30 +237,43 @@ class CfgGroups
 						class Unit0
 						{
 								side = 1;
-								vehicle = "1990_British_Tank_Commander_Desert"; //Class name of desired solider
+								vehicle = "1990_British_Vehicle_Commander"; //Class name of desired solider
 								rank = "CORPORAL"; // Rank
 								position[] = {0,3,0}; //Position in the formation
 						};
 						class Unit1
 						{
 								side = 1;
-								vehicle = "1990_British_Tank_Crew_Desert";
+								vehicle = "1990_British_Vehicle_Crew";
 								rank = "PRIVATE";
 								position[] = {3,0,0};
 						};
 						class Unit2
 						{
 								side = 1;
-								vehicle = "1990_British_Tank_Crew_Desert";
+								vehicle = "1990_British_Vehicle_Crew";
 								rank = "PRIVATE";
 								position[] = {5,0,0};
 						};
-						class Unit3
+					};
+					class 1990_qm
+					{
+						name = "Management Team"; //Name of Group
+						faction = "twc_faction"; //Faction
+						side = 1; //Side
+						class Unit0
 						{
 								side = 1;
-								vehicle = "1990_British_Tank_Crew_Desert";
+								vehicle = "1990_British_quartermaster"; //Class name of desired solider
+								rank = "CORPORAL"; // Rank
+								position[] = {0,3,0}; //Position in the formation
+						};
+						class Unit1
+						{
+								side = 1;
+								vehicle = "1990_British_quartermaster";
 								rank = "PRIVATE";
-								position[] = {7,0,0};
+								position[] = {3,0,0};
 						};
 					};
 				};
@@ -396,6 +416,82 @@ class CfgGroups
 								vehicle = "1990_RM_British_Medic_Mix";
 								rank = "PRIVATE";
 								position[] = {17,0,0};
+						};
+					};
+					class twc_men_1990_us_d_squad
+					{
+						name = "US Squad"; //Name of Group
+						faction = "twc_faction"; //Faction
+						side = 1; //Side
+						class Unit0
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_SquadLeader"; //Class name of desired solider
+							rank = "SERGEANT"; // Rank
+							position[] = {0,3,0}; //Position in the formation
+						};
+						class Unit1
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_teamleader";
+							rank = "CORPORAL";
+							position[] = {3,0,0};
+						};
+						class Unit2
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_rifleman";
+							rank = "PRIVATE";
+							position[] = {5,0,0};
+						};
+						class Unit3
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_rifleman_at";
+							rank = "PRIVATE";
+							position[] = {7,0,0};
+						};
+						class Unit4
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_autorifleman";
+							rank = "PRIVATE";
+							position[] = {9,0,0};
+						};
+						class Unit5
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_teamleader";
+							rank = "CORPORAL";
+							position[] = {11,0,0};
+						};
+						class Unit6
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_rifleman";
+							rank = "PRIVATE";
+							position[] = {13,0,0};
+						};
+						class Unit7
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_rifleman_at";
+							rank = "PRIVATE";
+							position[] = {15,0,0};
+						};
+						class Unit8
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_autorifleman";
+							rank = "PRIVATE";
+							position[] = {17,0,0};
+						};
+						class Unit9
+						{
+							side = 1;
+							vehicle = "twc_men_1990_us_d_medic";
+							rank = "PRIVATE";
+							position[] = {19,0,0};
 						};
 					};
 								class Modern_ana_section
@@ -560,6 +656,13 @@ class CfgGroups
 									rank = "lieutenant"; // Rank
 									position[] = {0,3,0}; //Position in the formation
 							};
+							class Unit1
+							{
+									side = 1;
+									vehicle = "1990_British_Crewchief"; //Class name of desired solider
+									rank = "lieutenant"; // Rank
+									position[] = {3,0,0}; //Position in the formation
+							};
 					};
 					class 1990_Vehicle_Crew_desert
 					{
@@ -587,12 +690,25 @@ class CfgGroups
 								rank = "PRIVATE";
 								position[] = {5,0,0};
 						};
-						class Unit3
+					};
+					class 1990_qm_d
+					{
+						name = "Management Team"; //Name of Group
+						faction = "twc_faction"; //Faction
+						side = 1; //Side
+						class Unit0
 						{
 								side = 1;
-								vehicle = "1990_British_Tank_Crew_Desert";
+								vehicle = "1990_British_quartermaster_Desert"; //Class name of desired solider
+								rank = "CORPORAL"; // Rank
+								position[] = {0,3,0}; //Position in the formation
+						};
+						class Unit1
+						{
+								side = 1;
+								vehicle = "1990_British_quartermaster_Desert";
 								rank = "PRIVATE";
-								position[] = {7,0,0};
+								position[] = {3,0,0};
 						};
 					};
 				};
@@ -666,6 +782,68 @@ class CfgGroups
 								vehicle = "2000_British_Medic_Desert";
 								rank = "PRIVATE";
 								position[] = {17,0,0};
+						};
+					};
+					class 2000_UKSF_Section
+					{
+						name = "SAS Team"; //Name of Group
+						faction = "twc_faction"; //Faction
+						side = 1; //Side
+						class Unit0
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Sectionleader"; //Class name of desired solider
+								rank = "CORPORAL"; // Rank
+								position[] = {0,3,0}; //Position in the formation
+						};
+						class Unit1
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Pointman";
+								rank = "PRIVATE";
+								position[] = {3,0,0};
+						};
+						class Unit2
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Base";
+								rank = "PRIVATE";
+								position[] = {5,0,0};
+						};
+						class Unit3
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Grenadier";
+								rank = "PRIVATE";
+								position[] = {7,0,0};
+						};
+						class Unit4
+						{
+								side = 1;
+								vehicle = "2000_UKSF_2ic";
+								rank = "PRIVATE";
+								position[] = {9,0,0};
+						};
+						class Unit5
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Grenadier";
+								rank = "PRIVATE";
+								position[] = {11,0,0};
+						};
+						class Unit6
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Base";
+								rank = "PRIVATE";
+								position[] = {13,0,0};
+						};
+						class Unit7
+						{
+								side = 1;
+								vehicle = "2000_UKSF_Medic";
+								rank = "PRIVATE";
+								position[] = {15,0,0};
 						};
 					};
 					class 2000_Section_Desert_mech
@@ -859,12 +1037,25 @@ class CfgGroups
 								rank = "PRIVATE";
 								position[] = {5,0,0};
 						};
-						class Unit3
+					};
+					class 2000_qm_Desert
+					{
+						name = "Management Team"; //Name of Group
+						faction = "twc_faction"; //Faction
+						side = 1; //Side
+						class Unit0
 						{
 								side = 1;
-								vehicle = "2000_British_Vehicle_Crew";
+								vehicle = "2000_British_quartermaster_Desert"; //Class name of desired solider
+								rank = "CORPORAL"; // Rank
+								position[] = {0,3,0}; //Position in the formation
+						};
+						class Unit1
+						{
+								side = 1;
+								vehicle = "2000_British_quartermaster_Desert";
 								rank = "PRIVATE";
-								position[] = {7,0,0};
+								position[] = {3,0,0};
 						};
 					};
 					
@@ -1167,12 +1358,25 @@ class CfgGroups
 								rank = "PRIVATE";
 								position[] = {5,0,0};
 						};
-						class Unit3
+					};
+					class 2000_qm
+					{
+						name = "Management Team"; //Name of Group
+						faction = "twc_faction"; //Faction
+						side = 1; //Side
+						class Unit0
 						{
 								side = 1;
-								vehicle = "2000_British_Vehicle_Crew";
+								vehicle = "2000_British_quartermaster"; //Class name of desired solider
+								rank = "CORPORAL"; // Rank
+								position[] = {0,3,0}; //Position in the formation
+						};
+						class Unit1
+						{
+								side = 1;
+								vehicle = "2000_British_quartermaster";
 								rank = "PRIVATE";
-								position[] = {7,0,0};
+								position[] = {3,0,0};
 						};
 					};
 					

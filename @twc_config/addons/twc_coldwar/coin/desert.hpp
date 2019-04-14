@@ -1,4 +1,4 @@
-//COIN, Desert
+//COIN, DESERT
 //Section
 class TWC_Infantry_ColdWar_COIN_Desert_Rifleman: TWC_Infantry_ColdWar_Regular_Desert_Rifleman
 {
