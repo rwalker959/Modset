@@ -1,7 +1,6 @@
 class CfgVehicles {
-	class Items_base_F;
-	
-	class TWC_Generator_Modern_Portable: Land_PortableGenerator_01_F {
+	class Land_Portable_generator_F;
+	class TWC_Generator_Power_Portable: Land_Portable_generator_F {
 		displayName = "Portable Generator (Power Source)";
 		editorCategory = "EdCat_Supplies";
 		editorSubcategory = "EdSubcat_Utilities";
@@ -28,18 +27,39 @@ class CfgVehicles {
 					icon = "";
 				};
 				
-				class TWC_Generator_Connect {
-					displayName = "Connect";
+				class TWC_Generator_ConnectCable {
+					displayName = "Connect Cable";
 					condition = "";
 					showDisabled = 0;
 					priority = 1;
 					distance = 4.5;
 					icon = "";
-					insertChildren = "_this call TWC_Generator_fnc_getConnectChildren";
+					insertChildren = "_this call TWC_Generator_fnc_getCableChildren";
 				};
 				
-				class TWC_Generator_Disonnect {
-					displayName = "Disconnect";
+				class TWC_Generator_DisonnectCable {
+					displayName = "Disconnect Cable";
+					condition = "";
+					statement = "";
+					showDisabled = 0;
+					priority = 1;
+					distance = 4.5;
+					icon = "";
+				};
+				
+				class TWC_Generator_ConnectFuel {
+					displayName = "Connect Fuel";
+					condition = "";
+					statement = "";
+					showDisabled = 0;
+					priority = 1;
+					distance = 4.5;
+					icon = "";
+					insertChildren = "_this call TWC_Generator_fnc_getFuelChildren";
+				};
+				
+				class TWC_Generator_DisonnectFuel {
+					displayName = "Disconnect Fuel";
 					condition = "";
 					statement = "";
 					showDisabled = 0;
@@ -49,5 +69,17 @@ class CfgVehicles {
 				};
 			};
 		};
+	};
+	
+	class CargoNet_01_barrels_F;
+	class TWC_Generator_Fuel_Portable: CargoNet_01_barrels_F {
+		displayName = "Portable Fuel (Power Source)";
+		editorCategory = "EdCat_Supplies";
+		editorSubcategory = "EdSubcat_Utilities";
+		
+		ace_refuel_fuelCargo = 1500;
+		// TODO: At some point fill this array with the tops of the barrel models
+		ace_refuel_hooks[] = {{0, 0, 0}};
+		ace_refuel_canReceive = 0;
 	};
 };
