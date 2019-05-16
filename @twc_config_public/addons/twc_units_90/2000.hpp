@@ -76,6 +76,41 @@
 			"ACE_tourniquet"
 		};		
 	};
+	class 2000_British_Blank: 2000_British_Base
+	{
+		scope=2;
+		displayName="Blank Unit";
+		nakedUniform="U_BasicBody";
+		uniformClass="UK3CB_BAF_U_Smock_DDPM";
+		linkedItems[]=
+		{
+		};
+		respawnLinkedItems[]=
+		{
+		};
+		Items[]=
+		{
+		};
+		respawnitems[]=
+		{
+		};
+		weapons[]=
+		{
+			"Throw",
+			"Put"
+		};
+		respawnweapons[]=
+		{
+			"Throw",
+			"Put"
+		};
+		magazines[]=
+		{
+		};
+		Respawnmagazines[]=
+		{
+		};
+	};
 	class 2000_British_Platoon_Commander: 2000_British_Base
 	{
 		scope=2;
@@ -2236,7 +2271,7 @@
 		linkedItems[]=
 		{
 			"CUP_V_I_RACS_Carrier_Vest_wdl",
-			"UK3CB_BAF_H_Mk6_DDPM_A",
+			"UK3CB_BAF_H_Mk6_DDPM_C",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch"
@@ -2244,7 +2279,7 @@
 		respawnLinkedItems[]=
 		{
 			"CUP_V_I_RACS_Carrier_Vest_wdl",
-			"UK3CB_BAF_H_Mk6_DDPM_A",
+			"UK3CB_BAF_H_Mk6_DDPM_C",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch"
@@ -2370,8 +2405,8 @@
 		backpack="TWC_Backpack_USMC2000_Sectionleader";
 		linkedItems[]=
 		{
-			"CUP_V_I_RACS_Carrier_Vest_wdl",
-			"UK3CB_BAF_H_Mk6_DDPM_A",
+			"CUP_V_B_Delta_2",
+			"UK3CB_BAF_H_Mk6_DDPM_C",
 			"ItemGPS",
 			"ItemMap",
 			"ItemCompass",
@@ -2379,8 +2414,8 @@
 		};
 		respawnLinkedItems[]=
 		{
-			"CUP_V_I_RACS_Carrier_Vest_wdl",
-			"UK3CB_BAF_H_Mk6_DDPM_A",
+			"CUP_V_B_Delta_2",
+			"UK3CB_BAF_H_Mk6_DDPM_C",
 			"ItemGPS",
 			"ItemMap",
 			"ItemCompass",
