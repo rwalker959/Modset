@@ -49,7 +49,7 @@ class CfgVehicles {
 				
 				class TWC_Generator_ConnectFuel {
 					displayName = "Connect Fuel";
-					condition = "";
+					condition = "_this getVariable [""TWC_Generator_FuelConnected"", false]";
 					statement = "";
 					showDisabled = 0;
 					priority = 1;
@@ -60,7 +60,7 @@ class CfgVehicles {
 				
 				class TWC_Generator_DisonnectFuel {
 					displayName = "Disconnect Fuel";
-					condition = "";
+					condition = "!(_this getVariable [""TWC_Generator_FuelConnected"", false])";
 					statement = "";
 					showDisabled = 0;
 					priority = 1;
@@ -81,5 +81,6 @@ class CfgVehicles {
 		// TODO: At some point fill this array with the tops of the barrel models
 		ace_refuel_hooks[] = {{0, 0, 0}};
 		ace_refuel_canReceive = 0;
+		TWC_Generator_fuelSource = 1;
 	};
 };
