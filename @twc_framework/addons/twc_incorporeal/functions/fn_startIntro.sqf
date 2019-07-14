@@ -12,14 +12,22 @@ if (!isNil "completedTasks") then {
 _introData = [] call TWC_Incorporeal_fnc_getIntroData;
 
 // Calculate time per section for panning shot. Overall time limit is 40 seconds, divided by element count. Min of 4 seconds per group.
-_totalPlayerCount = count (allPlayers - entities "HeadlessClient_F");
+_allPlayers = call BIS_fnc_listPlayers;
+_totalPlayerCount = count (_allPlayers - entities "HeadlessClient_F");
 _panTimePerUnit = (40 / _totalPlayerCount) max 1.5;
 [true] call ace_common_fnc_disableUserInput;
 //disableUserInput true;
+player enableSimulation false;
 
 waitUntil {!(isNil "BIS_fnc_init")};
 _cam = "camera" camCreate (player modelToWorld [0, 2, 2]);
 _cam cameraEffect ["internal", "back"];
+
+_ambientLight = [player] call ACE_map_fnc_determineMapLight;
+
+if (_ambientLight select 0) then {
+	camUseNVG true;
+};
 
 [_song] spawn { playMusic (_this select 0); }; // play calculated tune
 [] spawn TWC_Incorporeal_fnc_setPlayerUp;
@@ -34,11 +42,10 @@ _titleText = format [
 	_author
 ];
 
-[parseText _titleText, [0, 0.3, 1, 1], nil, 5, 5, 0] spawn BIS_fnc_textTiles;
-sleep 10;
+[parseText _titleText, [0, 0.3, 1, 1], nil, 4, 4, 0] spawn BIS_fnc_textTiles;
+sleep 11;
 
-titleCut ["", "BLACK IN", 15];
-sleep 5;
+titleCut ["", "BLACK IN", 20];
 
 _alternatePan = false;
 
@@ -56,6 +63,7 @@ _alternatePan = false;
 	
 	_alternatePan = !_alternatePan;
 	_panTime = (count _groupUnits) * _panTimePerUnit;
+	//systemChat format ["panTime: %1 - _groupUnit count: %2 - panTimePerUnit: %3", _panTime, (count _groupUnits), _panTimePerUnit];
 	
 	// prevent bad pans
 	if (!alive _firstUnit && alive _lastUnit) then { _firstUnit = _lastUnit; };
@@ -73,7 +81,7 @@ _alternatePan = false;
 	_groupText = format ["<t color='#ff6633' size='2' align='left'>%1</t><br/>%2", _groupName, _displayString];
 	
 	titleText [_groupText, "PLAIN", -1, false, true];
-	titleFadeOut _panTime;
+	titleFadeOut (_panTime + 2);
 	
 	if (alive _firstUnit && alive _lastUnit) then {
 		_cam camSetTarget (_firstUnit modelToWorld [0, 0, 1.5]);
@@ -87,8 +95,7 @@ _alternatePan = false;
 		_cam camCommit _panTime;
 	};
 	
-	//_waitFor = (_forEachIndex + 1) * _panTimePerAsset;
-	sleep (_panTime + 2);
+	sleep (_panTime + 1);
 } forEach _introData;
 
 _cam = "camera" camCreate (player modelToWorld [0, 2, 5]);
@@ -99,6 +106,7 @@ camDestroy _cam;
 disableUserInput false;
 disableUserInput true;
 disableUserInput false; */
+player enableSimulation true;
 [false] call ace_common_fnc_disableUserInput;
 
 "dynamicBlur" ppEffectEnable true;

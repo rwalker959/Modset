@@ -8,15 +8,19 @@ class CfgFunctions {
 			class Artillery{};
 			class AttackHelicopter{};
 			class AttackPlane {};
+			class banzaiSounds {};
 			class BattlefieldSounds {};
 			class briefingLoadout {};
+			class charge {};
 			class CommandMessage{};
+			class crateParadrop {};
 			class createMarker{};
 			class CreateTask{};
 			class daisyCutter{};
 			class Defend {};
 			class dummyBullets {};
 			class Flagchange {};
+			class HideMarkers {};
 			class intelHint{};
 			class intelHintWithVariable{};
 			class LightsSwitch{};
@@ -63,6 +67,7 @@ class CfgFunctions {
 			class safeZone{};
 			class zeus{};
 			class moduleCreateTask;
+			class moduleCrateParadrop {};
 			class moduleStationaryUnits{};
 			class moduleMovableUnits{};
 			class moduleVirtualArtillery{};
@@ -75,7 +80,9 @@ class CfgFunctions {
 			class moduleAttackPlane{};
 			class moduleAmbientAA;
 			class moduleCommandMessage{};
+			class moduleCharge {};
 			class moduleLightsSwitch{};
+			class moduleHideMarkers{};
 			class moduleIntelHint{};
 			class moduleIntelHintWithVariable{};
 			class moduleDaisyCutter{};

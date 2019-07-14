@@ -4,10 +4,26 @@ class asdg_MuzzleSlot_556_3CB;
 
 class cfgWeapons
 {
-	class UK3CB_BAF_L85A2;
-	class UK3CB_BAF_L86A2;
+	class twc_BAF_L85A2_PUBLIC;
+	class UK3CB_BAF_L86A2_public;
 	class UK3CB_BAF_L85A2_UGL;
 	class UK3CB_BAF_SUSAT_3D;
+	
+	class rhsgref_uniform_dpm;
+	class twc_rhsgref_uniform_dpm: rhsgref_uniform_dpm
+	{
+		modelSides[] = {0,1,2,3};
+	};
+	class rhsgref_uniform_dpm_olive;
+	class twc_rhsgref_uniform_dpm_olive: rhsgref_uniform_dpm_olive
+	{
+		modelSides[] = {0,1,2,3};
+	};
+	class rhsgref_uniform_olive;
+	class twc_rhsgref_uniform_olive: rhsgref_uniform_olive
+	{
+		modelSides[] = {0,1,2,3};
+	};
 	
 	class CUP_smg_MP5SD6;
 	class TWC_CUP_smg_MP5SD6_clean:CUP_smg_MP5SD6
@@ -15,13 +31,28 @@ class cfgWeapons
 		class WeaponSlotsInfo
 		{
 			allowedslots[] = {701,901};
-			mass = 65;
+			mass = 45;
 		};
 	};
 		
 	class uk3cb_baf_silencer_l85;
 	class twc_L85_suppressor: uk3cb_baf_silencer_l85
-	{};
+	{
+		displayName = "T8 Suppressor";
+	};
+	
+	class UK3CB_BAF_L1A1_Wood;
+	class TWC_UK3CB_BAF_L1A1_Wood_SUIT: UK3CB_BAF_L1A1_Wood
+	{
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot="CowsSlot";
+				item="UK3CB_BAF_SUIT";
+			};
+		};
+	};
 	
 	class UK3CB_BAF_L119A1_CQB;
 	class TWC_UK3CB_BAF_L119A1_CQB_ACOG: UK3CB_BAF_L119A1_CQB
@@ -51,6 +82,13 @@ class cfgWeapons
 			allowedslots[] = {901};
 			mass = 70;
 		};
+	};
+	
+	class Rifle_Base_F;
+	class CUP_srifle_LeeEnfield: Rifle_Base_F
+	{
+		recoil = "twc_rifle_762";
+		recoilProne = "twc_rifle_762_prone";
 	};
 	
 	class UK3CB_BAF_L119A1_FG;
@@ -306,13 +344,13 @@ class cfgWeapons
 		hiddenSelectionsTextures[] = {"uk3cb_baf_equipment\backpacks\data\backpack_oli_co.paa","uk3cb_baf_equipment\backpacks\data\backpack_oli_co.paa"};
 	};
 	
-	class UK3CB_BAF_L86A1:UK3CB_BAF_L86A2
+	class UK3CB_BAF_L86A1:UK3CB_BAF_L86A2_public
 	{
 		displayName = "L86A1";
 		ACE_Overheating_JamChance[] = {0, 0.0012, 0.0018, 0.0033};
 		author="Jayman";
 	};
-	class UK3CB_BAF_L86A1_SUSAT3D:UK3CB_BAF_L86A2
+	class UK3CB_BAF_L86A1_SUSAT3D:UK3CB_BAF_L86A2_public
 	{
 		scope = 1;
 		displayName = "L86A1";
@@ -338,8 +376,8 @@ class cfgWeapons
 			mass = 84;
 		};
 	};
-	class UK3CB_BAF_L110A2;
-		class TWC_UK3CB_BAF_L110A2_SUSAT: UK3CB_BAF_L110A2
+	class UK3CB_BAF_L110A2RIS_public;
+		class TWC_UK3CB_BAF_L110A2_SUSAT: UK3CB_BAF_L110A2RIS_public
 	{
 		scope = 1;
 		author="Hobbs";
@@ -364,7 +402,7 @@ class cfgWeapons
 		};
 	};
 	
-	class UK3CB_BAF_L85A1:UK3CB_BAF_L85A2
+	class UK3CB_BAF_L85A1:twc_BAF_L85A2_PUBLIC
 	{
 		displayName = "L85A1";
 		ACE_Overheating_JamChance[] = {0, 0.0012, 0.0018, 0.0033};
@@ -468,7 +506,7 @@ class cfgWeapons
 	
 
 	
-		class UK3CB_BAF_L85A2_SUSAT:UK3CB_BAF_L85A2
+		class UK3CB_BAF_L85A2_SUSAT:twc_BAF_L85A2_PUBLIC
 	{
 		scope = 1;
 		displayName = "L85A2";

@@ -19,7 +19,17 @@ _target setVariable ["ACE_isUnconscious", true, true];
 _target setUnconscious true;
 
 // play the audio locally, for the patient
-playSound "TWC_Sound_Medical_Surgery";
+missionNameSpace setVariable ["ace_hearing_disableVolumeUpdate", true];
+// execute next frame, so the volumeUpdate can take effect
+[{
+	_hasEarPlugs = [player] call ace_hearing_fnc_hasEarPlugsIn;
+	
+	if (_hasEarPlugs) then {
+		playSound "TWC_Sound_Medical_Surgery";
+	} else {
+		playSound "TWC_Sound_Medical_Surgery_NoEarPlugs";
+	};
+}] call CBA_fnc_execNextFrame;
 
 // add time to their revive counter, to prevent them from dying during the surgery
 _reviveStartTime = _target getVariable ["ace_medical_reviveStartTime", 0];
@@ -34,10 +44,13 @@ _target setVariable ["ace_medical_reviveStartTime", _timeToAdd, true];
 	params ["_caller", "_target", "_startingLocation"];
 	
 	// stop the sound, regardless of circumstance
-	_sound = ASLToAGL [0,0,0] nearestObject "#soundonvehicle";
-	deleteVehicle _sound;
+	missionNameSpace setVariable ["ace_hearing_disableVolumeUpdate", false];
+	[] spawn {
+		_sound = ASLToAGL [0,0,0] nearestObject "#soundonvehicle";
+		deleteVehicle _sound;
+	};
 	
-	if (((position _target) distance _startingLocation) >= 50) exitWith {
+	if (((position _target) distance _startingLocation) >= 10) exitWith {
 		// DEAD. LOL.
 		["TWC_Unit_Perished", [_target, "removed_from_surgery"]] call CBA_fnc_globalEvent;
 		[_unit, true, false] call ace_medical_fnc_setDead;

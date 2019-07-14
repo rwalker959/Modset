@@ -17,10 +17,6 @@ class CfgFunctions {
 			class updateUIInfo {
 				file = "twc_medical\functions\fn_updateUIInfo.sqf";
 			};
-			
-			class updateBodyImage {
-				file = "twc_medical\functions\fn_updateBodyImage.sqf";
-			};
 		};
 	};
 	
@@ -40,6 +36,7 @@ class CfgFunctions {
 			class fullyBandageUnit {};
 			class fullHealWithoutLog {};
 			class removeMedicalItem {};
+			class onOverDose {};
 
 			// Uncon Loop
 			class extendedUnconLoop {};

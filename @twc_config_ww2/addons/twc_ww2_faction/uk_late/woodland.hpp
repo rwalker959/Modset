@@ -123,14 +123,12 @@ class TWC_Infantry_WW2_UK_Late_Woodland_SMG: TWC_Infantry_WW2_UK_Late_Woodland_R
 	magazines[] =
 	{
 		MAG_7("LIB_32Rnd_9x19_Sten"),
-		MAG_3("LIB_MillsBomb"),
-		"LIB_No82"
+		MAG_3("LIB_MillsBomb")
 	};
 	respawnmagazines[] =
 	{
 		MAG_7("LIB_32Rnd_9x19_Sten"),
-		MAG_3("LIB_MillsBomb"),
-		"LIB_No82"
+		MAG_3("LIB_MillsBomb")
 	};
 };
 class TWC_Infantry_WW2_UK_Late_Woodland_MG: TWC_Infantry_WW2_UK_Late_Woodland_Rifleman
@@ -363,6 +361,7 @@ class TWC_Infantry_WW2_UK_Late_Woodland_Platoon_Medic: TWC_Infantry_WW2_UK_Late_
 {
 	displayName = "Platoon Medic";
 	backpack = "TWC_Backpack_WW2_UK_Late_Platoon_Medic";
+	attendant = 1;
 	magazines[] =
 	{
 		MAG_3("LIB_32Rnd_9x19_Sten"),

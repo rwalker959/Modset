@@ -3,6 +3,7 @@ class CfgPatches {
 		requiredAddons[] = {
 			"ace_medical",
 			"ace_medical_menu",
+			"TWC_Core",
 			"twc_framework"
 		};
 
@@ -66,7 +67,6 @@ class Extended_PostInit_EventHandlers {
 	};
 };
 
-#include "ui\menu.hpp"
 #include "CfgFunctions.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"

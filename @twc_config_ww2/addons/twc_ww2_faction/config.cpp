@@ -108,6 +108,61 @@ class CfgEditorSubcategories {
 	};
 };
 
+class CfgMarkers
+{
+	class flag;
+	class TWC_Marker_WW2_Australia_Flag {
+		name = "Australia";
+		icon = "twc_ww2_faction\anzac\australia.paa";
+		texture = "twc_ww2_faction\anzac\australia.paa";
+		size = 32;
+		scope = 2;
+		shadow = 0;
+		color[] = {1,1,1,1};
+		markerClass = "Flags";
+	};
+	class TWC_Marker_WW2_NewZealand_Flag {
+		name = "New Zealand";
+		icon = "twc_ww2_faction\anzac\new_zealand.paa";
+		texture = "twc_ww2_faction\anzac\new_zealand.paa";
+		size = 32;
+		scope = 2;
+		shadow = 0;
+		color[] = {1,1,1,1};
+		markerClass = "Flags";
+	};
+	class TWC_Marker_WW2_Canada_Flag {
+		name = "Canada";
+		icon = "twc_ww2_faction\canada\canada.paa";
+		texture = "twc_ww2_faction\canada\canada.paa";
+		size = 32;
+		scope = 2;
+		shadow = 0;
+		color[] = {1,1,1,1};
+		markerClass = "Flags";
+	};
+	class TWC_Marker_WW2_India_Flag {
+		name = "British India";
+		icon = "twc_ww2_faction\india\india.paa";
+		texture = "twc_ww2_faction\india\india.paa";
+		size = 32;
+		scope = 2;
+		shadow = 0;
+		color[] = {1,1,1,1};
+		markerClass = "Flags";
+	};
+	class TWC_Marker_WW2_SouthAfrica_Flag {
+		name = "South Africa";
+		icon = "twc_ww2_faction\south_africa\south_africa.paa";
+		texture = "twc_ww2_faction\south_africa\south_africa.paa";
+		size = 32;
+		scope = 2;
+		shadow = 0;
+		color[] = {1,1,1,1};
+		markerClass = "Flags";
+	};
+};
+
 class EventHandlers;
 
 class CfgWeapons
@@ -257,6 +312,9 @@ class CfgVehicles
 		CATEGORY(TWC_ForceType_Armoured)
 		uniformClass = "U_LIB_UK_P37";
 		TWC_isCommandRole = 1;
+		class EventHandlers: EventHandlers {
+			init = "(_this select 0) setVariable ['twc_keepMap',true]";
+		};
 		linkedItems[] =
 		{
 			"V_LIB_UK_P37_Crew",
@@ -286,12 +344,14 @@ class CfgVehicles
 		weapons[] =
 		{
 			"LIB_Sten_Mk2",
+			"LIB_Binocular_UK",
 			"Throw",
 			"Put"
 		};
 		respawnweapons[] =
 		{
 			"LIB_Sten_Mk2",
+			"LIB_Binocular_UK",
 			"Throw",
 			"Put"
 		};
@@ -310,6 +370,21 @@ class CfgVehicles
 	{
 		displayName = "Tank Crew (Late)";
 		TWC_isCommandRole = 0;
+		class EventHandlers: EventHandlers {
+			init = "(_this select 0) setVariable ['twc_keepMap',false]";
+		};
+		weapons[] =
+		{
+			"LIB_Sten_Mk2",
+			"Throw",
+			"Put"
+		};
+		respawnweapons[] =
+		{
+			"LIB_Sten_Mk2",
+			"Throw",
+			"Put"
+		};
 	};
 	class TWC_Infantry_WW2_Early_Tank_Commander: TWC_Infantry_WW2_Late_Tank_Commander
 	{
@@ -317,12 +392,14 @@ class CfgVehicles
 		weapons[] =
 		{
 			"LIB_M1928_Thompson",
+			"LIB_Binocular_UK",
 			"Throw",
 			"Put"
 		};
 		respawnweapons[] =
 		{
 			"LIB_M1928_Thompson",
+			"LIB_Binocular_UK",
 			"Throw",
 			"Put"
 		};
@@ -382,6 +459,7 @@ class CfgVehicles
 	#include "uk_early\tropic_dismounted.hpp"
 	
 	#include "uk_airborne\woodland.hpp"
+	#include "uk_airborne\arctic.hpp"
 	
 	#include "anzac\desert.hpp"
 	#include "anzac\desert_dismounted.hpp"

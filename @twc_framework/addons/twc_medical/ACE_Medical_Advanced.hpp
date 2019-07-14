@@ -2,36 +2,42 @@ class ACE_Medical_Advanced {
 	class Injuries {
 		class wounds {
 			class Avulsions {
-				bleedingRate = 0.02;
-				pain = 0.5;
+				bleedingRate = 0.025;
+				pain = 0.4;
 				
 				class Minor {
 					bleedingRate = 0.025;
+					pain = 0.35;
 				};
 				
 				class Medium {
 					bleedingRate = 0.05;
+					pain = 0.4;
 				};
 				
 				class Large {
 					bleedingRate = 0.075;
+					pain = 0.5;
 				};
 			};
 			
 			class velocityWound {
-				bleedingRate = 0.02;
-				pain = 0.3;
+				bleedingRate = 0.05;
+				pain = 0.2;
 				
 				class Minor {
 					bleedingRate = 0.05;
+					pain = 0.2;
 				};
 				
 				class Medium {
 					bleedingRate = 0.1;
+					pain = 0.2;
 				};
 				
 				class Large {
 					bleedingRate = 0.15;
+					pain = 0.3;
 				};
 			};
 		};
@@ -40,14 +46,24 @@ class ACE_Medical_Advanced {
 	class Treatment {
 		class Medication {
 			class Morphine {
-				painReduce = 0.7;
-				maxDose = 2;
+				painReduce = 0.8;
+				maxDose = 3;
 				viscosityChange = -5;
+				onOverDose = "_this call TWC_medical_fnc_onOverDose";
 			};
 			
 			class Epinephrine {
 				timeInSystem = 900;
-				maxDose = 3;
+				maxDose = 2;
+				viscosityChange = 5;
+				onOverDose = "_this call TWC_medical_fnc_onOverDose";
+			};
+			
+			class PainKillers {
+				painReduce = 0.2;
+				timeInSystem = 3600;
+				maxDose = 6;
+				inCompatableMedication[] = {};
 				viscosityChange = 5;
 			};
 		};

@@ -206,7 +206,7 @@
 		weapons[]= {
 			"Throw",
 			"Put",
-			"UK3CB_BAF_L85A2_RIS_ELCAN3D",
+			"UK3CB_BAF_L85A2_RIS_ELCAN3D_TAN",
 			"rhs_weap_m72a7",
 			"rhsusf_weap_glock17g4"
 		};
@@ -214,7 +214,7 @@
 		respawnweapons[]= {
 			"Throw",
 			"Put",
-			"UK3CB_BAF_L85A2_RIS_ELCAN3D",
+			"UK3CB_BAF_L85A2_RIS_ELCAN3D_TAN",
 			"rhs_weap_m72a7",
 			"rhsusf_weap_glock17g4"
 		};
@@ -751,14 +751,14 @@
 		weapons[]= {
 			"Throw",
 			"Put",
-			"twc_l115a3_wd",
+			"twc_l115a3_wd_covered",
 			"rhsusf_weap_glock17g4"
 		};
 		respawnweapons[]=
 		{
 			"Throw",
 			"Put",
-			"twc_l115a3_wd",
+			"twc_l115a3_wd_covered",
 			"rhsusf_weap_glock17g4"
 		};
 
@@ -927,8 +927,6 @@
 		displayName="Rifleman";
 		faction="ana_units";
 		editorSubcategory = "Men_ana";
-		twc_radioType = "ACRE_PRC148";
-		twc_radioChannel = 4;
 		twc_nobackpack = 1;
 		vehicleClass="Men_ana";
 		icon="iconManLeader";
@@ -939,13 +937,11 @@
 		linkedItems[]=
 		{
         "UK3CB_BAF_V_PLCE_Webbing_OLI",
-		"ItemMap",
 		"ItemCompass"
 		};
 		respawnLinkedItems[]=
 		{
         "UK3CB_BAF_V_PLCE_Webbing_OLI",
-		"ItemMap",
 		"ItemCompass"
 		};
 		weapons[]=
@@ -987,6 +983,70 @@
 		"rhs_30Rnd_762x39mm",
 		"HandGrenade",
 		"SmokeShell"
+		};
+		Items[]=
+		{
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			
+			"ACE_EarPlugs",
+			"ACRE_PRC343",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_quikclot",
+			"ACE_quikclot",
+			"ACE_morphine",
+			"ACE_epinephrine",
+			"ACE_tourniquet",
+			"ACE_tourniquet",
+			"ACE_MapTools"
+		};
+		respawnitems[]=
+		{
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			
+			"ACE_EarPlugs",
+			"ACRE_PRC343",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_CableTie",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_packingBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_elasticBandage",
+			"ACE_quikclot",
+			"ACE_quikclot",
+			"ACE_morphine",
+			"ACE_epinephrine",
+			"ACE_tourniquet",
+			"ACE_tourniquet"
 		};
 	};
 	
@@ -1031,7 +1091,7 @@
 		Items[]=
 		{
 		"ACE_fieldDressing",
-		"ACRE_PRC148",
+		"ACRE_PRC343",
 		"ACRE_PRC152",
 		"ACE_EarPlugs",
 		"ACE_fieldDressing",
@@ -1045,7 +1105,7 @@
 		respawnItems[]=
 		{
 		"ACE_fieldDressing",
-		"ACRE_PRC148",
+		"ACRE_PRC343",
 		"ACRE_PRC152",
 		"ACE_EarPlugs",
 		"ACE_fieldDressing",
@@ -1171,13 +1231,11 @@
 		linkedItems[]=
 		{
         "CUP_V_O_Ins_Carrier_Rig_Com",
-		"ItemMap",
 		"ItemCompass"
 		};
 		respawnLinkedItems[]=
 		{
         "CUP_V_O_Ins_Carrier_Rig_Com",
-		"ItemMap",
 		"ItemCompass"
 		};
 		weapons[]=
@@ -1232,13 +1290,11 @@
 		linkedItems[]=
 		{
         "CUP_V_O_Ins_Carrier_Rig_MG",
-		"ItemMap",
 		"ItemCompass"
 		};
 		respawnLinkedItems[]=
 		{
         "CUP_V_O_Ins_Carrier_Rig_MG",
-		"ItemMap",
 		"ItemCompass"
 		};
 		weapons[]=
@@ -1279,13 +1335,11 @@
 		linkedItems[]=
 		{
         "CUP_V_O_Ins_Carrier_Rig_MG",
-		"ItemMap",
 		"ItemCompass"
 		};
 		respawnLinkedItems[]=
 		{
         "CUP_V_O_Ins_Carrier_Rig_MG",
-		"ItemMap",
 		"ItemCompass"
 		};
 		weapons[]=
@@ -1331,13 +1385,11 @@
 		linkedItems[]=
 		{
         "UK3CB_BAF_V_PLCE_Webbing_OLI",
-		"ItemMap",
 		"ItemCompass"
 		};
 		respawnLinkedItems[]=
 		{
         "UK3CB_BAF_V_PLCE_Webbing_OLI",
-		"ItemMap",
 		"ItemCompass"
 		};
 		weapons[]=
@@ -1382,7 +1434,6 @@
 		Items[]=
 		{
 		"ACE_fieldDressing",
-		"ACRE_PRC148",
 		"ACE_EarPlugs",
 		"ACE_fieldDressing",
 		"ACE_RangeCard",
@@ -1396,7 +1447,6 @@
 		respawnItems[]=
 		{
 		"ACE_fieldDressing",
-		"ACRE_PRC148",
 		"ACE_EarPlugs",
 		"ACE_fieldDressing",
 		"ACE_RangeCard",
@@ -1420,13 +1470,11 @@
 		linkedItems[]=
 		{
         "UK3CB_BAF_V_PLCE_Webbing_OLI",
-		"ItemMap",
 		"ItemCompass"
 		};
 		respawnLinkedItems[]=
 		{
         "UK3CB_BAF_V_PLCE_Webbing_OLI",
-		"ItemMap",
 		"ItemCompass"
 		};
 		weapons[]=

@@ -4,6 +4,60 @@
 		armor = 150;
 	};
 	
+	class Tank_F;
+	class rhs_t14_base: Tank_F
+	{
+		armor = 350;
+	};
+	
+	class ACE_medicalSupplyCrate_advanced;
+	class twc_public_medicalbox_small: ACE_medicalSupplyCrate_advanced
+	{
+		maximumLoad = 300;
+		displayName = "Medical Supplies";
+	};
+	
+	class ACE_Box_Ammo;
+	class twc_public_762box_small: ACE_Box_Ammo
+	{
+		maximumLoad = 800;
+		displayName = "7.62 Belts";
+	};
+	class twc_public_50calbox_small: ACE_Box_Ammo
+	{
+		displayName = ".50 Belts";
+	};
+	class twc_public_40mmbox_small: ACE_Box_Ammo
+	{
+		displayName = "40mm Belts";
+	};
+	class UK3CB_BAF_Box_WpsLaunch_Javelin;
+	class twc_public_launcherbox_small_gen: UK3CB_BAF_Box_WpsLaunch_Javelin
+	{
+		maximumLoad = 720;
+		displayName = "Launcher Box";
+	};
+	class twc_public_launcherbox_small_at4: UK3CB_BAF_Box_WpsLaunch_Javelin
+	{
+		maximumLoad = 720;
+		displayName = "AT4 Launchers";
+	};
+	class twc_public_launcherbox_small_jav: twc_public_launcherbox_small_gen
+	{
+		maximumLoad = 340;
+		displayName = "Javelin Tubes";
+	};
+	class twc_public_launcherbox_small_maaws: twc_public_launcherbox_small_gen
+	{
+		displayName = "MAAWS Rockets";
+		maximumLoad = 700;
+	};
+	class twc_public_launcherbox_small_nlaw: twc_public_launcherbox_small_gen
+	{
+		displayName = "NLAW Launchers";
+		maximumLoad = 600;
+	};
+	
 	class rhsusf_Cougar_base;
 	class rhsusf_cougar_GPK_base: rhsusf_Cougar_base
 	{
@@ -27,6 +81,44 @@
 			{
 				magazine = "UK3CB_BAF_127_100Rnd";
 				count = 7;
+			};
+		};
+		class Transportitems
+		{};
+		class TransportWeapons
+		{};
+		class TransportBackpacks
+		{};
+	};
+
+	class CUP_FV432_Bulldog_Base;
+	class CUP_B_FV432_Bulldog_GB_D: CUP_FV432_Bulldog_Base
+	{
+		class Turrets;
+	};
+	class ukcw_fv432: CUP_B_FV432_Bulldog_GB_D
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret;
+		};
+	};
+	class ukcw_fv432_gpmg: ukcw_fv432
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: MainTurret
+			{
+				weapons[] = {"UK3CB_BAF_Safe","UK3CB_BAF_Landrover_L7A2_1"};
+				magazines[] = {"UK3CB_BAF_762_200Rnd_T"};
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_762
+			{
+				magazine = "UK3CB_BAF_762_200Rnd_T";
+				count = 10;
 			};
 		};
 		class Transportitems
@@ -68,7 +160,60 @@
 		class TransportBackpacks
 		{};
 	};
-	
+	class rhsusf_M1220_M153_M2_usarmy_d: rhsusf_M1220_M2_usarmy_d
+	{
+		class NewTurret;
+		class Turrets: Turrets
+		{
+			class M2_CROWS_Turret: NewTurret 
+			{
+				weapons[] = {"UK3CB_BAF_Safe","UK3CB_BAF_Landrover_L111A1"};
+				magazines[] = {"UK3CB_BAF_127_100Rnd"};
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_127
+			{
+				magazine = "UK3CB_BAF_127_100Rnd";
+				count = 10;
+			};
+		};
+		class Transportitems
+		{};
+		class TransportWeapons
+		{};
+		class TransportBackpacks
+		{};
+	};
+	/*
+	class rhsusf_M1220_M153_M2_usarmy_wd: rhsusf_M1220_M153_M2_usarmy_d
+	{
+		class NewTurret;
+		class Turrets: Turrets
+		{
+			class M2_CROWS_Turret: NewTurret 
+			{
+				weapons[] = {"UK3CB_BAF_Safe","UK3CB_BAF_Landrover_L111A1"};
+				magazines[] = {"UK3CB_BAF_127_100Rnd"};
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_127
+			{
+				magazine = "UK3CB_BAF_127_100Rnd";
+				count = 10;
+			};
+		};
+		class Transportitems
+		{};
+		class TransportWeapons
+		{};
+		class TransportBackpacks
+		{};
+	};
+	*/
 	class Car;
 	class Car_F: Car
 	{
@@ -173,6 +318,94 @@
 			class _xx_127
 			{
 				magazine = "UK3CB_BAF_127_100Rnd";
+				count = 10;
+			};
+		
+			delete _xx_Chemlight_Red;
+			delete _xx_CUP_1Rnd_HEDP_M203;
+			delete _xx_CUP_200Rnd_TE4_Red_Tracer_556x45_M249;
+			delete _xx_CUP_30Rnd_556x45_Stanag;
+			delete _xx_CUP_HandGrenade_M67;
+			delete _xx_CUP_M136_M;
+			delete _xx_SmokeShell;
+			delete _xx_SmokeShellOrange;
+		};
+		class Transportitems
+		{
+			delete _xx_FirstAidKit;
+			delete _xx_MediKit;
+			delete _xx_ToolKit;
+		};
+		class TransportWeapons
+		{
+			delete _xx_CUP_arifle_L85A2_G;
+			delete _xx_CUP_launch_M136;
+		};
+		class TransportBackpacks
+		{
+			delete _xx_CUP_B_Bergen_BAF;
+		};
+	};
+	
+	class CUP_B_Mastiff_GMG_GB_D: CUP_Mastiff_Base
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: NewTurret
+			{
+				weapons[] = {"UK3CB_BAF_Safe","UK3CB_BAF_L134A1_vehicle"};
+				magazines[] = {"UK3CB_BAF_32Rnd_40mm_G_Box"};
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_127
+			{
+				magazine = "UK3CB_BAF_32Rnd_40mm_G_Box";
+				count = 10;
+			};
+		
+			delete _xx_Chemlight_Red;
+			delete _xx_CUP_1Rnd_HEDP_M203;
+			delete _xx_CUP_200Rnd_TE4_Red_Tracer_556x45_M249;
+			delete _xx_CUP_30Rnd_556x45_Stanag;
+			delete _xx_CUP_HandGrenade_M67;
+			delete _xx_CUP_M136_M;
+			delete _xx_SmokeShell;
+			delete _xx_SmokeShellOrange;
+		};
+		class Transportitems
+		{
+			delete _xx_FirstAidKit;
+			delete _xx_MediKit;
+			delete _xx_ToolKit;
+		};
+		class TransportWeapons
+		{
+			delete _xx_CUP_arifle_L85A2_G;
+			delete _xx_CUP_launch_M136;
+		};
+		class TransportBackpacks
+		{
+			delete _xx_CUP_B_Bergen_BAF;
+		};
+	};
+	
+	class CUP_B_Mastiff_GMG_GB_W: CUP_Mastiff_Base
+	{
+		class Turrets: Turrets
+		{
+			class MainTurret: NewTurret
+			{
+				weapons[] = {"UK3CB_BAF_Safe","UK3CB_BAF_L134A1_vehicle"};
+				magazines[] = {"UK3CB_BAF_32Rnd_40mm_G_Box"};
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_127
+			{
+				magazine = "UK3CB_BAF_32Rnd_40mm_G_Box";
 				count = 10;
 			};
 		
@@ -627,14 +860,6 @@
 		class EventHandlers;
 	};
 
-	class CUP_CH47F_base;
-	class CUP_B_CH47F_GB: CUP_CH47F_base {
-		class EventHandlers;
-	};
-	
-	class twc_mert_ch47: CUP_B_CH47F_GB {
-		displayname = "CH-47D (MERT)";
-	};
 	
 	class Heli_Attack_01_base_F;
 	class RHS_AH64_base: Heli_Attack_01_base_F {
@@ -668,14 +893,17 @@
 		ace_cargo_canLoad = 1;
 		ace_cargo_hasCargo = 1;
 		ace_cargo_space = 2;
-		differentialType = "front_limited";
+		differentialType = "all_limited";
 		frontBias = 1.1;
+		frontRearSplit = 0.8;
 		rearBias = 2.5;
 		turnCoef = 2;
 		maxSpeed = 145;
 		normalSpeedForwardCoef = 1.1;
+		maxOmega = 937.76;
 		latency = 0.4;
 		gearBox[] = {-8,0,10,6.15,4.44,2.33,2.8,2.5};
+		torqueCurve[] = {{0.125,0.521053},{0.25,0.718947},{0.375,0.831579},{0.5,0.884211},{0.625,0.989474},{0.75,1.042105},{0.875,1.2},{1.12513,0}};
 		class Wheels {
 			class LF {
 			boneName = "wheel_1_1_damper";
@@ -684,39 +912,53 @@
 			dampingRate = 0.1;
 			dampingRateDamaged = 1;
 			dampingRateDestroyed = 1000;
-			frictionVsSlipGraph[] = {{ 0.0, 0.7 }, { 0.5, 0.5 }, { 1.0, 0.35 }};
+			frictionVsSlipGraph[] = {{ 0.0, 0.7 }, { 0.5, 0.6 },{ 1, 0.5 }};
 			latStiffX = 20;
 			latStiffY = 120;
 			longitudinalStiffnessPerUnitGravity = 9000;
 			mass = 40;
-			maxBrakeTorque = 2000;
-			maxCompression = 0.2;
-			maxDroop = 0.12;
+			maxCompression = 0.4;
+			maxDroop = 0.02;
 			maxHandBrakeTorque = 0;
 			MOI = 1.97192;
 			side = "left";
-			springDamperRate = 2500;
-			springStrength = 14000;
-			sprungMass = -1;
+			springDamperRate = 6500;
+			springStrength = 16000;
+			sprungMass = 625;
+			maxBrakeTorque = 300;
 			steering = 1;
 			suspForceAppPointOffset = "wheel_1_1_axis";
 			suspTravelDirection[] = {0,-1,0};
 			tireForceAppPointOffset = "wheel_1_1_axis";
 			width = 0.2;
 			};
-			class RF:LF {};
+			class RF:LF {
+			frictionVsSlipGraph[] = {{ 0.0, 0.7 }, { 0.5, 0.6 },{ 1, 0.5 }};
+			springDamperRate = 6500;
+			springStrength = 16000;
+			sprungMass = 625;
+			maxBrakeTorque = 300;
+			};
 			class RR: RF {
-			frictionVsSlipGraph[] = {{ 0.0, 0.55 }, { 0.8, 0.5 }, { 1.0, 0.4 }};
+			frictionVsSlipGraph[] = {{ 0.0, 0.7 }, { 0.5, 0.6 },{ 1, 0.5 }};
+			springDamperRate = 6500;
+			springStrength = 16000;
+			sprungMass = 625;
+			maxBrakeTorque = 500;
 			};
 			class LR: LF {
-			frictionVsSlipGraph[] = {{ 0.0, 0.55 }, { 0.8, 0.5 }, { 1.0, 0.4 }};
+			frictionVsSlipGraph[] = {{ 0.0, 0.7 }, { 0.5, 0.6 },{ 1, 0.5 }};
+			springDamperRate = 6500;
+			springStrength = 16000;
+			sprungMass = 625;
+			maxBrakeTorque = 500;
 			};
 			
 		};
 		class complexGearbox {
 			driveString = "D";
 			gearBoxMode = "auto";
-			GearboxRatios[] = {"R1",-2.47,"N",0,"D1",3.55,"D2",1.8,"D3",1.1};
+			GearboxRatios[] = {"R1",-2.47,"N",0,"D1",3.25,"D2",1.7,"D3",1.05};
 			moveOffGear = 1;
 			neutralString = "N";
 			reverseString = "R";

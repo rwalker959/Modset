@@ -902,7 +902,7 @@ class CfgVehicles {
 		};
 	};
 	
-	class TWC_Module_Amient_AttackPlane: ModuleCAS_F {
+	class TWC_Module_Ambient_AttackPlane: ModuleCAS_F {
 		author = "[TWC] Rik";
 		category = "twc_mission_framework";
 		displayName = "Ambient Attack Plane";
@@ -950,7 +950,42 @@ class CfgVehicles {
 				displayName = "Plane";
 				class values
 				{
-					class Spitfire
+					class Bf110_DE
+					{
+						name = "Bf-110 (DE)";
+						value = "sab_bf110";
+					};
+					class Fw190_DE
+					{
+						name = "Fw-190 (DE)";
+						value = "LIB_FW190F8_2";
+					};
+					class Fw190_DE_Desert
+					{
+						name = "Fw-190 (DE, Desert)";
+						value = "LIB_FW190F8_Italy";
+					};
+					class Ju87_DE
+					{
+						name = "Ju-87 (DE)";
+						value = "TWC_B_Ju87_SingleSeat";
+					};
+					class Ju87_DE_Italy
+					{
+						name = "Ju-87 (DE, Italy)";
+						value = "TWC_B_Ju87_SingleSeat_Italy";
+					};
+					class Ju87_DE_Desert
+					{
+						name = "Ju-87 (DE, Desert)";
+						value = "TWC_B_Ju87_SingleSeat_Desert";
+					};
+					class He111_DE
+					{
+						name = "He-111 (DE)";
+						value = "TWC_B_He111_SingleSeat";
+					};
+					class Spitfire_UK
 					{
 						name = "Spitfire (UK)";
 						value = "spitfire_v_G";
@@ -965,7 +1000,7 @@ class CfgVehicles {
 						name = "Hellcat (UK)";
 						value = "fow_va_f6f_c_faa";
 					};
-					class P47
+					class P47_US
 					{
 						name = "P-47 (US)";
 						value = "LIB_P47";
@@ -1058,16 +1093,70 @@ class CfgVehicles {
 				};
 			};
 		};
-		class ModuleDescription  {
+		class ModuleDescription {
 			description = "Call in Ambient Attack Plane, automatically despawned";
 			sync[] = {""};
 		};
 	};
-	class TWC_Module_Amient_AttackPlane_Zeus: TWC_Module_Amient_AttackPlane {
-		scope=1;
+	class TWC_Module_Ambient_AttackPlane_Gun: TWC_Module_Ambient_AttackPlane {
+		displayName = "Ambient Attack Plane (Gun)";
+		category = "twc_zeus";
+		scope = 1;
 		scopeCurator = 2;
-		isTriggerActivated=0;
+		isTriggerActivated = 0;
 		curatorCanAttach = 1;
+		curatorInfoType = "RscDisplayAttributesModuleCAS";
+		moduleCAStype = 0;
+	};
+	class TWC_Module_Ambient_AttackPlane_Missile: TWC_Module_Ambient_AttackPlane_Gun {
+		displayName = "Ambient Attack Plane (Missile)";
+		moduleCAStype = 1;
+	};
+	class TWC_Module_Ambient_AttackPlane_GunMissile: TWC_Module_Ambient_AttackPlane_Gun {
+		displayName = "Ambient Attack Plane (Gun/Missile)";
+		moduleCAStype = 2;
+	};
+	class TWC_Module_Ambient_AttackPlane_Bomb: TWC_Module_Ambient_AttackPlane_Gun {
+		displayName = "Ambient Attack Plane (Bomb)";
+		moduleCAStype = 3;
+	};
+	
+
+	class TWC_Module_Charge: Module_F {
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Charge";
+		function = "twc_fnc_moduleCharge";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		icon = "\twc_framework\ui\movable_units_ca.paa";
+		functionPriority = 5;
+		isDisposable = 0;
+
+		class Arguments {
+			class Banzai {
+				displayName = "Banzai Sounds";
+				description = "Whether the units should yell Banzai every 8 seconds";
+				typeName = "BOOL";
+				defaultValue = "Yes";
+				class Values {
+					class Yes {
+						name = "Yes";
+						value = true;
+					};
+					class No {
+						name = "No";
+						value = false;
+					};
+				};
+			};
+		};
+
+		class ModuleDescription: ModuleDescription {
+			description = "Makes units charge relentlessly to a location, without stopping to engage until they arrive.";
+			sync[] = {"EmptyDetector"};
+		};
 	};
 	
 	class TWC_Module_CommandMessage: Module_F {
@@ -1094,6 +1183,107 @@ class CfgVehicles {
 		class ModuleDescription: ModuleDescription {
 			description = "Send Command A Message";
 			sync[] = {"EmptyDetector"};
+		};
+	};
+	
+	class TWC_Module_CrateParadrop: Module_F {
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Crate Paradrop";
+		function = "twc_fnc_moduleCrateParadrop";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		icon = "\twc_framework\ui\airborne_ca.paa";
+		functionPriority = 5;
+		isDisposable = 0;
+
+		class Arguments {
+			class Plane {
+				displayName = "Plane";
+				description = "Type of plane that drops the crate";
+				typeName = "String";
+				defaultValue = "C130";
+				class Values {
+					class C130 {
+						name = "C-130";
+						value = "CUP_B_C130J_GB";
+					};
+					class C47 {
+						name = "C-47";
+						value = "LIB_C47_RAF";
+					};
+				};
+			};
+			class Cargo {
+				displayName = "Cargo";
+				description = "What cargo the plane drops";
+				typeName = "String";
+				defaultValue = "";
+			};
+		};
+
+		class ModuleDescription: ModuleDescription {
+			description = "Send a plane to aidrop crate(s)";
+			sync[] = {"EmptyDetector"};
+		};
+	};
+	
+	class TWC_Module_HideMarkers: Module_F
+	{
+		author = "[TWC] Rik";
+		category = "twc_mission_framework";
+		displayName = "Hide Markers";
+		function = "twc_fnc_moduleHideMarkers";
+		scope = 2;
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		icon = "\twc_framework\ui\hide_marker_ca.paa";
+		functionPriority = 1;
+		class Arguments
+		{
+			class Markers
+			{
+				description = "The variable name of the markers to hide";
+				displayName = "Side";
+				typeName = "STRING";
+				defaultValue = "";
+			};
+			class Side
+			{
+				description = "Hide markers for this side";
+				displayName = "Side";
+				typeName = "STRING";
+				class values
+				{
+					class EAST
+					{
+						name = "OPFOR";
+						value = "EAST";
+					};
+					class WEST
+					{
+						default = 1;
+						name = "BLUFOR";
+						value = "WEST";
+					};
+					class GUER
+					{
+						name = "INDEPENDENT";
+						value = "GUER";
+					};
+					class CIV
+					{
+						name = "CIVILIAN";
+						value = "CIV";
+					};
+				};
+			};
+		};
+		class ModuleDescription: ModuleDescription {
+			description = "Hide Markers for given side";
+			sync[] = {""};
 		};
 	};
 	
@@ -1235,7 +1425,7 @@ class CfgVehicles {
 			sync[] = {""};
 		};
 	};
-		
+	
 	class TWC_Module_StationaryUnits: Module_F {
 		author = "[TWC] Bosenator & jayman";
 		category = "twc_mission_framework";
@@ -1497,11 +1687,25 @@ class CfgVehicles {
 				defaultValue = 0;
 			};
 			
-			class soundArgs {
-				displayName = "soundArgs array";
-				description = "[volume, pitch, distance]";
-				typeName = "String";
-				defaultValue = "[4, 1, 1000]";
+			class volume {
+				displayName = "Volume";
+				description = "Volume, usually 1 - 20";
+				typeName = "Number";
+				defaultValue = 4;
+			};
+			
+			class pitch {
+				displayName = "Pitch";
+				description = "Pitch, usually 1";
+				typeName = "Number";
+				defaultValue = 1;
+			};
+			
+			class distance {
+				displayName = "Distance";
+				description = "Distance to be heard, usually 1000";
+				typeName = "Number";
+				defaultValue = 1000;
 			};
 		};
 	};
