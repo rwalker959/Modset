@@ -27,6 +27,7 @@ class CfgFunctions {
 			// Init
 			class init {};
 			class serverInit {};
+			class settings {};
 			
 			// Generics
 			class addTime {};
@@ -54,6 +55,7 @@ class CfgFunctions {
 			
 			// Bloodlust Compat & Insta-Kill
 			class bloodlustInit {};
+			class checkDamage {};
 		};
 		
 		class modules {
