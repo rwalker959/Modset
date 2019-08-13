@@ -95,30 +95,14 @@ class CfgFunctions {
 			class moduleIntelHint{};
 			class moduleIntelHintWithVariable{};
 			class moduleDaisyCutter{};
-			class moduleDisableCaching {};
 			class moduleGrabComposition {};
 			class moduleIgnoreForwardBase {};
 			class moduleGliderTakeOff {};
-			class moduleTriggerUncache {};
-			class moduleUrbanUnitsCache {};
 			class modulegunwalk {};
 			class modulemortarwalk {};
 			class moduleACEInteract {};
 			class moduleAmbientSound {};
 			class moduleAmbientSoundSimp {};
-		};
-		
-		class cache {
-			file = "twc_framework\cache";
-			class aiCaching {};
-			class cacheGroup {};
-			class cacheModuleInit {};
-			class cacheVehicle {};
-			class initAICache {};
-			class initVehicleCache {};
-			class unCacheGroup {};
-			class unCacheVehicle {};
-			class vehicleCaching {};
 		};
 		
 		class headlessClient {
