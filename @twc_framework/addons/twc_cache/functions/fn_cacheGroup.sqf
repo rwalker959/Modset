@@ -1,32 +1,37 @@
-params["_group"];
+params ["_group", ["_cacheRange", -1]];
 
-if !(isNil {_group getVariable "twc_cacheDefending"}) then {
-	_ready = 0;
-	_timeMax = time + 60;
-	_timeMin = time + 20;
+private _isDefending = _group getVariable ["TWC_Cache_Defending", false];
 
-	waitUntil {
-		_ready = 1;
-
+if (_isDefending) then {
+	[
 		{
-			if !(unitReady _x) then {
-				_ready = 0;
-			};
-		} forEach (units _group);
+			({unitReady _x} count units (_this select 1) == (count units (_this select 1)))
+		}, {
+			params ["_group", "_cacheRange"];
 
-		(_ready == 1 && _timeMin < time) || _timeMax < time;
-	};
+			{
+				_x disableAI "path";
+				_x enableSimulationGlobal false;
+				_x hideObjectGlobal true;
+			} forEach (units _group);
+		}, 
+		[_group, _cacheRange],
+		60,
+		{
+			params ["_group", "_cacheRange"];
 
-	{
-		_x disableAI "path";
-		_x enableSimulationGlobal false;
-		_x hideObjectGlobal true;
-	} forEach (units _group);
+			{
+				_x disableAI "path";
+				_x enableSimulationGlobal false;
+				_x hideObjectGlobal true;
+			} forEach (units _group);
+		}
+	] call CBA_fnc_waitUntilAndExecute;
 } else {
 	{
-		if (leader _x != _x || str (assignedVehicleRole _x) != "['Driver']") then {
+		if (leader _x != _x && !("Driver" in (assignedVehicleRole _x))) then {
 			_x enableSimulationGlobal false;
 			_x hideObjectGlobal true;
 		};
-	} forEach units _group;
+	} forEach (units _group);
 };
