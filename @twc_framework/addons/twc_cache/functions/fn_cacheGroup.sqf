@@ -14,10 +14,13 @@ if (_isDefending) then {
 				_x enableSimulationGlobal false;
 				_x hideObjectGlobal true;
 			} forEach (units _group);
+
+			[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, _cacheRange, true], 1] call CBA_fnc_waitAndExecute;
 		}, 
 		[_group, _cacheRange],
 		60,
 		{
+			/* Code to run, if the timeout is reached (the same code) */
 			params ["_group", "_cacheRange"];
 
 			{
@@ -25,6 +28,8 @@ if (_isDefending) then {
 				_x enableSimulationGlobal false;
 				_x hideObjectGlobal true;
 			} forEach (units _group);
+
+			[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, _cacheRange, true], 1] call CBA_fnc_waitAndExecute;
 		}
 	] call CBA_fnc_waitUntilAndExecute;
 } else {
@@ -34,4 +39,6 @@ if (_isDefending) then {
 			_x hideObjectGlobal true;
 		};
 	} forEach (units _group);
+
+	[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, _cacheRange, true], 1] call CBA_fnc_waitAndExecute;
 };
