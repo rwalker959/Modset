@@ -18,7 +18,7 @@ if (_temporaryIgnoreCaching) exitWith {
 }; */
 
 if ({alive _x} count (units _group) == 0) exitWith {
-	["Exiting an infantry loop, all units within group dead", "Cache"] call TWC_Debug_fnc_logGlobal;
+	[format ["Exiting an infantry loop, all units within %1 are dead", name _group], "Cache"] call TWC_Debug_fnc_logGlobal;
 };
 
 private _leader = leader _group;
