@@ -3,7 +3,11 @@ class CfgPatches {
 		units[]={};
 		weapons[]={};
 		requiredVersion = 1.7;
-		requiredAddons[] = {"TWC_Core"};
+		requiredAddons[] = {
+			"TWC_Core",
+			"TWC_Debug"
+		};
+		
 		author[] = {};
 		authorUrl = "";
 		version = "1";

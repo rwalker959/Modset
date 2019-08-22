@@ -46,7 +46,6 @@ class CfgFunctions {
 			class GliderTakeOff {};
 			class confiscateBadItems {};
 			class silentSafety {};
-			class gunwalk {};
 			class mortarwalk {};
 			class init{};
 			class addACEInteraction {};
