@@ -14,11 +14,15 @@
 * Public: No
 */
 
+_check = missionnamespace getvariable ["twc_stopscramble", 0];
+if (_check == 1) exitwith {};
+
 //Recieved Parameters
-params ["_unit"];
+params ["_unit", "_cqbonly"];
 
 
 _unit setvariable ["twc_aisuppression", 1, true];
+
 
 
 
@@ -39,8 +43,8 @@ if (_enemy == objnull) then {
 	_enemy = allplayers call bis_fnc_selectrandom;
 };
 
-if ((_enemy distance _unit) < 80) exitwith {
-	[_unit, _enemy] spawn TWC_fnc_aisuppresscqb;
+if (((_enemy distance _unit) < 80) || (_cqbonly > 1)) exitwith {
+	[_unit, _enemy, _cqbonly] spawn TWC_fnc_aisuppresscqb;
 };
 
 _debug = missionnamespace getvariable ["twcdb", 0];
@@ -106,7 +110,7 @@ _unit domove _npos;
 
 
 _unit setspeedmode "full";
-(group _unit) setBehaviour "aware";
+(group _unit) setBehaviour "combat";
 _time = (_unit distance _npos) min (5 + (random 10));
 sleep _time;
 [_unit] joinsilent _ogroup;
@@ -152,4 +156,4 @@ if (_inittime < (time - 600)) exitwith {
 };
 
 sleep 5;
-[_unit, _inittime] spawn TWC_fnc_aisuppress;
+[_unit, _cqbonly] spawn TWC_fnc_aisuppress;
