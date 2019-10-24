@@ -1,10 +1,7 @@
-params ["_unit", "_duration"];
+params ["_unit", "_duration", ["_intensity", 0.5]];
 
-private _intensity = 0.5; // 0 - 1
-
-// this needs to be done on init, as it only needs to be done once per unit
-private _source = createSimpleObject ["CBA_NamespaceDummy", (getPos _unit), true];
-_source attachTo [_unit, [0, 0.15, 0], "neck"];
+private _source = _unit getVariable ["TWC_Cold_Weather_Mouth", objNull];
+if (isNull _source) exitWith {}; // add log
 
 private _breath = "#particlesource" createVehicleLocal (getPos _source);
 
@@ -37,3 +34,4 @@ _breath setParticleRandom [2, [0, 0, 0], [0.25, 0.25, 0.25], 0, 0.5, [0, 0, 0, 0
 _breath setDropInterval 0.0001;
 
 // delete after _duration
+[{ deleteVehicle (_this select 0); }, [_breath], _duration] call CBA_fnc_waitAndExecute;

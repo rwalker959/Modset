@@ -31,3 +31,11 @@ class Extended_PostInit_EventHandlers {
 		clientInit = "call TWC_Cold_Weather_fnc_clientInit;";
 	};
 };
+
+class Extended_Init_EventHandlers {
+	class CAManBase {
+		class TWC_Cold_Weather {
+			clientInit = "_this call TWC_Cold_Weather_fnc_unitInit;";
+		};
+	};
+};
