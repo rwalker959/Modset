@@ -14,16 +14,15 @@
  */
 params ["_logic", "_units", "_activated"];
 
-if (!_activated || !isServer) exitWith {};
+_debug = false;
 
-_aiCacheRange = missionNamespace getVariable ["twc_cachingAIRange", 1500];
-_urbanRange = missionNamespace getVariable ["TWC_Cache_UrbanRange", 750];
+if (!_activated || (!_debug && hasInterface)) exitWith {};
 
-if (_aiCacheRange > _urbanRange) then {
-	{
-		(group _x) setVariable ["TWC_Cache_Range", _urbanRange, true];
-	} forEach _units;
-};
+_urbanRange = missionNamespace getVariable ["TWC_Cache_Urban_Range", 750];
+
+{
+	(group _x) setVariable ["TWC_Cache_Group_Range", _urbanRange];
+} forEach _units;
 
 if (!isNull _logic) then {
 	deleteVehicle _logic;

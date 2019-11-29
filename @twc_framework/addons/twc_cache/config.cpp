@@ -36,8 +36,15 @@ class Extended_PreInit_EventHandlers {
 class Extended_InitPost_EventHandlers {
 	class CAManBase {
 		class TWC_Cache_initEH {
-			init = "_this call TWC_Cache_fnc_init;";
-			local = "_this call TWC_Cache_fnc_ownershipChanged;";
+			init = "_this call TWC_Cache_fnc_handleInitMan;";
+			local = "_this call TWC_Cache_fnc_handleLocal;";
+		};
+	};
+	
+	class AllVehicles {
+		class TWC_Cache_initEH {
+			init = "_this call TWC_Cache_fnc_handleInitVehicle;";
+			local = "_this call TWC_Cache_fnc_handleLocal;";
 		};
 	};
 };

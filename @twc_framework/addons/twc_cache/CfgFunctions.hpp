@@ -18,8 +18,6 @@ class CfgFunctions {
 			class init {};
 			class settings {};
 			class ownershipChanged {};
-			
-			
 		};
 	};
 };
