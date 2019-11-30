@@ -13,11 +13,9 @@ if !(_enabled) exitWith {};
 	};
 } forEach allGroups;
 
-missionNameSpace setVariable ["twc_cachingAIRange", (_logic getVariable "aiRange")];
-missionNameSpace setVariable ["twc_cachingVehicleRange", (_logic getVariable "vehicleRange")];
-
 missionNameSpace setVariable ["TWC_Cache_Infantry_Range", (_logic getVariable "aiRange")];
 missionNameSpace setVariable ["TWC_Cache_Urban_Range", (_logic getVariable "urbanRange")];
+missionNameSpace setVariable ["TWC_Cache_Vehicle_Range", (_logic getVariable "vehicleRange")];
 
 // Happens at mission init (map screen ops, spawn on public). Delayed to allow for custom cache ranges to be applied.
 [{

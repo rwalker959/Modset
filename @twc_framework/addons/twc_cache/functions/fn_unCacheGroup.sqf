@@ -1,4 +1,4 @@
-params ["_group"];
+params ["_group", "_cacheRange"];
 
 if (!(isNil {_group getVariable "twc_cacheDefending"})) then {
 	{
@@ -13,13 +13,12 @@ if (!(isNil {_group getVariable "twc_cacheDefending"})) then {
 			_x setPos (formationPosition _x);
 			_x allowDamage false;
 			
-			[_x] spawn {
-				sleep 3;
-				(_this select 0) allowDamage true;
-			};
+			[{ (_this select 0) allowDamage true; }, [_x], 3] call CBA_fnc_waitAndExecute;
 		} else {
 			_x enableSimulationGlobal true;
 			_x hideObjectGlobal false;
 		};
 	} forEach (units _group);
 };
+
+[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, false, _cacheRange], 1] call CBA_fnc_waitAndExecute;

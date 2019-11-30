@@ -15,7 +15,7 @@ if (_isDefending) then {
 				_x hideObjectGlobal true;
 			} forEach (units _group);
 
-			[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, _cacheRange, true], 1] call CBA_fnc_waitAndExecute;
+			[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, true, _cacheRange], 1] call CBA_fnc_waitAndExecute;
 		}, 
 		[_group, _cacheRange],
 		60,
@@ -29,7 +29,7 @@ if (_isDefending) then {
 				_x hideObjectGlobal true;
 			} forEach (units _group);
 
-			[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, _cacheRange, true], 1] call CBA_fnc_waitAndExecute;
+			[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, true, _cacheRange], 1] call CBA_fnc_waitAndExecute;
 		}
 	] call CBA_fnc_waitUntilAndExecute;
 } else {
@@ -40,5 +40,5 @@ if (_isDefending) then {
 		};
 	} forEach (units _group);
 
-	[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, _cacheRange, true], 1] call CBA_fnc_waitAndExecute;
+	[{ _this call TWC_Cache_fnc_infantryLoop; }, [_group, true, _cacheRange], 1] call CBA_fnc_waitAndExecute;
 };
