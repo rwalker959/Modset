@@ -8,14 +8,14 @@ class Extended_InitPost_EventHandlers {
 	class CAManBase {
 		class TWC_Cache_initEH {
 			init = "_this call TWC_Cache_fnc_handleInitMan;";
-			local = "_this call TWC_Cache_fnc_handleLocal;";
+			local = "_this call TWC_Cache_fnc_handleLocalMan;";
 		};
 	};
 	
 	class AllVehicles {
 		class TWC_Cache_initEH {
 			init = "_this call TWC_Cache_fnc_handleInitVehicle;";
-			local = "_this call TWC_Cache_fnc_handleLocal;";
+			local = "_this call TWC_Cache_fnc_handleLocalVehicle;";
 		};
 	};
 };

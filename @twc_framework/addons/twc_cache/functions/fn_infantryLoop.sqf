@@ -4,18 +4,11 @@ if (isNull _group) exitWith {
 	["Exiting an infantry loop, nullGroup encountered", "Cache"] call TWC_Debug_fnc_logGlobal;
 };
 
-private _cacheBlacklist = _group getVariable ["TWC_Cache_Blacklist", false];
+private _cacheBlacklist = _group getVariable ["TWC_Cache_Blacklisted", false];
 
 if (_cacheBlacklist) exitWith {
 	["Exiting an infantry loop, blacklisted group encountered", "Cache"] call TWC_Debug_fnc_logGlobal;
 };
-
-/* private _temporaryIgnoreCaching = _group getVariable ["TWC_Cache_TempIgnore", false];
-
-if (_temporaryIgnoreCaching) exitWith {
-	Keep checking every second until flag is lifted
-	[{ _this call TWC_Cache_fnc_infantryLoop; }, _this, 1] call CBA_fnc_waitAndExecute;
-}; */
 
 if ({alive _x} count (units _group) == 0) exitWith {
 	[format ["Exiting an infantry loop, all units within %1 are dead", name _group], "Cache"] call TWC_Debug_fnc_logGlobal;

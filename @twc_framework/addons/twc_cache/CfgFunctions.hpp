@@ -3,21 +3,24 @@ class CfgFunctions {
 		class functions {
 			file = "twc_cache\functions";
 			
-			/** OLD **/
-			class aiCaching {};
+			// Init
+			class handleInitMan {};
+			class handleInitVehicle {};
+			class settings {};
+			
+			// Locality
+			class handleLocalMan {}:
+			class handleLocalVehicle {}:
+			
+			// Loops
+			class infantryLoop {};
+			class vehicleLoop {};
+			
+			// Caching
 			class cacheGroup {};
-			class cacheModuleInit {};
 			class cacheVehicle {};
-			class initAICache {};
-			class initVehicleCache {};
 			class unCacheGroup {};
 			class unCacheVehicle {};
-			class vehicleCaching {};
-			
-			// EH
-			class init {};
-			class settings {};
-			class ownershipChanged {};
 		};
 	};
 };
