@@ -1,14 +1,17 @@
-// Start an effects loop, until unit stops talking, at which point cancel it.
-// Therefore breaths should form for duration of conversation.
+if !(hasInterface) exitWith {};
 
-["acre_startedSpeaking", {
+// Globals
+TWC_Cold_Weather_breathingList = [];
+
+["acre_remoteStartedSpeaking", {
 	params ["_unit", "_onRadio", "_radioID"];
 	
-	[_unit] call TWC_Cold_Weather_fnc_breathEffect;
+	[_unit] call TWC_Cold_Weather_fnc_startBreathLoop;
 }] call CBA_fnc_addEventHandler;
 
-["acre_startedSpeaking", {
-	params ["_unit", "_onRadio", "_radioID"];
+["acre_remoteStoppedSpeaking", {
+	params ["_unit"];
 
-	
+	[_unit] call TWC_Cold_Weather_fnc_stopBreathLoop;
+	// TWC_Cold_Weather_currentBreathingCount = TWC_Cold_Weather_currentBreathingCount - 1;
 }] call CBA_fnc_addEventHandler;
