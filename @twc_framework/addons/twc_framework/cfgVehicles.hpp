@@ -224,7 +224,7 @@ class CfgVehicles {
 	
 	class twc_moduelCache: Module_F {
 		author = "[TWC] jayman";
-		scope = 2;
+		scope = 1;
 		displayName = "Cache Configuration";
 		category = "twc_cache_modules";
 		function = "twc_fnc_cacheModuleInit";
