@@ -7,6 +7,10 @@ if (isNull _group) exitWith {
 private _cacheBlacklist = _group getVariable ["TWC_Cache_Blacklisted", false];
 
 if (_cacheBlacklist) exitWith {
+	if (_isCached) then {
+		[_group, _cacheDistance] call TWC_Cache_fnc_unCacheGroup;
+	};
+
 	["Exiting an infantry loop, blacklisted group encountered", "Cache"] call TWC_Debug_fnc_logGlobal;
 };
 
@@ -34,5 +38,5 @@ if ({_x distance _leader < _cacheDistance} count allPlayers == 0) then {
 
 // Reloop, if all other conditions are fine
 if (_continue) exitWith {
-	[{ _this call TWC_Cache_fnc_infantryLoop; }, _this, 1] call CBA_fnc_waitAndExecute;
+	[{ _this call TWC_Cache_fnc_infantryLoop; }, _this, 2] call CBA_fnc_waitAndExecute;
 };

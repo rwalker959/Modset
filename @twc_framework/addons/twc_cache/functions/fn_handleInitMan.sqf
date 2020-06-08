@@ -16,7 +16,10 @@ if (_infantryCacheRange <= 0) exitWith {
 
 // if this unit is the leader, and there's no players in the group...
 // only one recursive loop per section / when all dead within, loop cancels out
-if (leader _man == _man && {isPlayer _x} count Units (group _man) == 0) then {
+if (leader _man == _man && ({isPlayer _x} count Units (group _man) == 0)) then {
+	_cacheGroupCount = missionNameSpace getVariable ["TWC_Caching_Group_Count", 0];
+	missionNameSpace setVariable ["TWC_Caching_Group_Count", (_cacheGroupCount + 1)];
+
 	_cacheRange = (group _man) getVariable ["TWC_Cache_Group_Range", _infantryCacheRange];
-	[(group _man), false, _cacheRange] call TWC_Cache_fnc_infantryLoop;
+	[{ _this call TWC_Cache_fnc_infantryLoop; }, [(group _man), false, _cacheRange], (1 + (_cacheGroupCount % 2))] call CBA_fnc_waitAndExecute;
 };
