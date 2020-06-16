@@ -1,5 +1,9 @@
 params [["_group", grpNull], ["_isCached", false], ["_cacheDistance", 1500]];
 
+if !(TWC_Cache_Enabled) exitWith {
+	["Exiting loops, as caching was disabled dynamically", "Cache"] call TWC_Debug_fnc_logGlobal;
+};
+
 if (isNull _group) exitWith {
 	["Exiting an infantry loop, nullGroup encountered", "Cache"] call TWC_Debug_fnc_logGlobal;
 };

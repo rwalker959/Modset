@@ -7,6 +7,7 @@ class CfgFunctions {
 			class handleInitMan {};
 			class handleInitVehicle {};
 			class settings {};
+			class updatedSettings {};
 			
 			// Locality
 			class handleLocalMan {}:
